@@ -1,0 +1,49 @@
+---
+import { siteConfig } from '@site/site.config';
+import AdSlot from './AdSlot.astro';
+
+const year = 2026;
+---
+<footer class="site-footer">
+  <div class="shell">
+    <AdSlot name="footer" variant="footer" />
+    <div class="footer-grid">
+      <div>
+        <h2>Not a casino. A fan wiki.</h2>
+        <p class="fine" id="disclaimer">{siteConfig.disclaimer}</p>
+        <p class="fine">
+          The developers say they do not condone gambling. If gambling is a problem, use the in-game
+          <strong>GET HELP (GAMBLE HOTLINE)</strong> menu entry, or contact the
+          <a href="https://www.ncpgambling.org/">National Council on Problem Gambling</a>.
+        </p>
+      </div>
+      <div>
+        <h2>On this site</h2>
+        <ul>
+          <li><a href="/faq">FAQ</a></li>
+          <li><a href="/platforms">Platforms</a></li>
+          <li><a href="/online-fix">Online fix</a></li>
+          <li><a href="#privacy">Privacy</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Official</h2>
+        <ul>
+          <li><a href={siteConfig.steamUrl}>Steam store</a></li>
+          <li><a href={siteConfig.discordUrl}>Discord</a></li>
+          <li><a href={`mailto:${siteConfig.supportEmail}`}>{siteConfig.supportEmail}</a></li>
+        </ul>
+      </div>
+    </div>
+    <div id="privacy" class="fine">
+      <h2>Privacy</h2>
+      <p>
+        This is a static site. It has no accounts. The achievement and Phone Booth checkboxes stay in
+        this browser’s local storage and are not uploaded. Analytics and Adsterra tags are omitted
+        until their placeholder ids in the site config are replaced. Checklist keys are prefixed with
+        Steam AppID {siteConfig.steamAppId}.
+      </p>
+      <p>© {year} {siteConfig.domain}. Game © {siteConfig.publisher}.</p>
+    </div>
+  </div>
+</footer>

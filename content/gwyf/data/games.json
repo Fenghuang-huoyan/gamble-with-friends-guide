@@ -1,0 +1,172 @@
+[
+  {
+    "id": "roulette",
+    "name": "Roulette",
+    "floors": "1, also 4 for Ball in Motion",
+    "risk": "medium",
+    "reload": "unverified",
+    "confidence": "provisional",
+    "summary": "Bet color, parity, or a number. Safer bets pay less. A last-ditch double is red or black, not a single number.",
+    "achievements": "All on Red, Ball in Motion"
+  },
+  {
+    "id": "wheel-of-fortune",
+    "name": "Wheel of Fortune",
+    "floors": "1 and 3",
+    "risk": "lower",
+    "reload": "physics",
+    "confidence": "provisional",
+    "summary": "A different machine from the Money Wheel. Guides treat small repeated bets as the sane use, and say wheels do not replay on reload.",
+    "achievements": "Spin The Wheel, Keep It Spinning, Lucky Streak (Floor 1 route)"
+  },
+  {
+    "id": "blackjack",
+    "name": "Blackjack",
+    "floors": "1, and 4 for House Breaker",
+    "risk": "medium",
+    "reload": "replays",
+    "confidence": "provisional",
+    "summary": "Beat the dealer without passing 21. Card order is the usual reload target: the same hands come back if you quit before the day resolves.",
+    "achievements": "Risky Move, No Bust Run, House Breaker"
+  },
+  {
+    "id": "slots",
+    "name": "Slots",
+    "floors": "1",
+    "risk": "higher",
+    "reload": "unverified",
+    "confidence": "provisional",
+    "summary": "Fast spins. Useful when a Holy Statue window is already running, because you can get several bets in before it ends.",
+    "achievements": "Jackpot Hunter"
+  },
+  {
+    "id": "street-craps",
+    "name": "Street Craps",
+    "floors": "1 and 3",
+    "risk": "medium",
+    "reload": "unverified",
+    "confidence": "provisional",
+    "summary": "Floor 1’s Lucky 7 is the first roll, and only a 7. Floor 3’s Natural Roller is a win during the point phase. The “infinite money” reputation is the reload trick, not the table’s odds.",
+    "achievements": "Lucky 7, Natural Roller"
+  },
+  {
+    "id": "duck-race",
+    "name": "Duck Race",
+    "floors": "1 and 4",
+    "risk": "higher",
+    "reload": "replays",
+    "confidence": "provisional",
+    "summary": "Pick a duck. Community save-scum notes treat the winner as something you can learn with a small bet and a reload.",
+    "achievements": "YARLL!!!, Unstoppable Quack"
+  },
+  {
+    "id": "crash",
+    "name": "Crash",
+    "floors": "2 and 4",
+    "risk": "higher",
+    "reload": "unverified",
+    "confidence": "provisional",
+    "summary": "Cash out before the rocket dies. V1.0.30 tweaked Crash payouts and fixed a client screen that could stick. A cautious cash-out around 1.5x is the community habit, not a rule.",
+    "achievements": "Greed Test, Safe Exit"
+  },
+  {
+    "id": "plinko",
+    "name": "Plinko",
+    "floors": "2 and 4",
+    "risk": "higher",
+    "reload": "physics",
+    "confidence": "provisional",
+    "summary": "A peg board. Reloading does not repeat the path. For Clean Fall, players lightly throw a baseball bat (Q) at the middle pin of the third row so balls shed toward the 24x cups. It is an assist, not a promise.",
+    "achievements": "Clean Fall, Straight Down"
+  },
+  {
+    "id": "penguin-cross",
+    "name": "Penguin Cross",
+    "floors": "2, and later floors",
+    "risk": "higher",
+    "reload": "unverified",
+    "confidence": "provisional",
+    "summary": "Step the penguin forward and cash the multiplier before traffic gets it. Further is richer and more likely to zero the bet.",
+    "achievements": "Winner Winner Penguin Dinner, Traffic Monster, No Hesitation"
+  },
+  {
+    "id": "keno",
+    "name": "Keno",
+    "floors": "2 and 4",
+    "risk": "higher",
+    "reload": "unverified",
+    "confidence": "provisional",
+    "summary": "Pick tiles, then see which ones hit. Guides say the board is random and that chasing last round’s tiles does not help.",
+    "achievements": "Spot On, Marked to Win"
+  },
+  {
+    "id": "hilo",
+    "name": "HiLo",
+    "floors": "2 and 3",
+    "risk": "higher",
+    "reload": "unverified",
+    "confidence": "provisional",
+    "summary": "Call the next card higher or lower. Floor achievements that cite HiLo line up with Steam ids named DICE, so the exact table label is slightly fuzzy.",
+    "achievements": "Roll the Odds, No Safe Rolls"
+  },
+  {
+    "id": "money-wheel",
+    "name": "Money Wheel",
+    "floors": "2 and 4",
+    "risk": "higher",
+    "reload": "physics",
+    "confidence": "provisional",
+    "summary": "Pick a color that maps to a multiplier. Not the Wheel of Fortune. Wheels are in the “reload will not help” group.",
+    "achievements": "Spin Streak, High Risk Wedge"
+  },
+  {
+    "id": "poker",
+    "name": "1P Poker",
+    "floors": "3",
+    "risk": "higher",
+    "reload": "replays",
+    "confidence": "provisional",
+    "summary": "A solo poker draw. Lock cards you want to keep, then draw. V1.0.30 fixed a duplicate-card bug. Poker Face wants you not to lock anything.",
+    "achievements": "Poker Face"
+  },
+  {
+    "id": "dragon-tower",
+    "name": "Dragon Tower",
+    "floors": "3 and 4",
+    "risk": "higher",
+    "reload": "replays",
+    "confidence": "provisional",
+    "summary": "Climb tiles and avoid the dragon eyes. Community routes memorize a path with a small bet, then reload. Same path, same tiles.",
+    "achievements": "Step Into Fire, Flameproof"
+  },
+  {
+    "id": "mine-sweeper",
+    "name": "Mine Sweeper",
+    "floors": "3 and 4",
+    "risk": "higher",
+    "reload": "replays",
+    "confidence": "provisional",
+    "summary": "The Steam 100% guide’s worked example: bombs you already hit come back after a quit-and-reload, so the next attempt can avoid them.",
+    "achievements": "Perfect Sweep, No Detonations"
+  },
+  {
+    "id": "baccarat",
+    "name": "Baccarat",
+    "floors": "Unverified",
+    "risk": "medium",
+    "reload": "unverified",
+    "confidence": "provisional",
+    "summary": "Bet which side gets closer to 9, or bet a tie. V1.0.30 changed its payouts. Which floor deals it was not pinned down in the sources checked here.",
+    "achievements": "None confirmed"
+  },
+  {
+    "id": "seventeenth",
+    "name": "17th game — name not confirmed",
+    "floors": "Unverified",
+    "risk": "unverified",
+    "reload": "unverified",
+    "confidence": "disputed",
+    "summary": "The Steam store says 17 games of chance. The 16 names above are the ones public guides agree on. The missing name is left blank on purpose.",
+    "achievements": "—"
+  }
+]

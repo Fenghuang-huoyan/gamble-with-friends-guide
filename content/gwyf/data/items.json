@@ -1,0 +1,137 @@
+[
+  {
+    "id": "angels-reel",
+    "name": "Angel's Reel",
+    "tickets": "3",
+    "activation": "result",
+    "confidence": "provisional",
+    "effect": "A chance to undo your last loss. Not a guaranteed refund.",
+    "pitfall": "Using it on a tiny loss wastes the cheapest recovery tool you have."
+  },
+  {
+    "id": "devils-reel",
+    "name": "Devil's Reel",
+    "tickets": "3",
+    "activation": "result",
+    "confidence": "provisional",
+    "effect": "Triple your last win, or zero it.",
+    "pitfall": "This is an escalation, not a refund. The whole crew has to agree before anyone spins it."
+  },
+  {
+    "id": "mystery-box",
+    "name": "Mystery Box",
+    "tickets": "4",
+    "activation": "shift",
+    "confidence": "provisional",
+    "effect": "Gives a random item. Someone still has to pick up whatever comes out.",
+    "pitfall": "No developer drop rates were found. Percent lists online are Unverified and are not repeated here."
+  },
+  {
+    "id": "golden-chip",
+    "name": "Golden Chip",
+    "tickets": "4",
+    "activation": "shift",
+    "confidence": "provisional",
+    "effect": "One free all-in at the keypad’s current maximum bet.",
+    "pitfall": "If you spend it before the Taser raises that maximum, the free bet is stuck at the normal cap."
+  },
+  {
+    "id": "taser",
+    "name": "Taser",
+    "tickets": "4",
+    "activation": "shift",
+    "confidence": "provisional",
+    "effect": "Hold it on a keypad to raise that machine’s max bet. A full contact is described as about 10 seconds for a 5x cap, and the charge can be split across two machines. The raised cap lasts the rest of the day.",
+    "pitfall": "Zapping the wrong keypad, or zapping after the Golden Chip, throws the combo away."
+  },
+  {
+    "id": "quota-gun",
+    "name": "Quota Gun",
+    "tickets": "5",
+    "activation": "shift",
+    "confidence": "provisional",
+    "effect": "Community tooltip notes say each body part it shoots is worth about a third of that day’s quota, and only while you are under quota. One gun is described as harvesting 3 parts.",
+    "pitfall": "The “about 33%” figure is repeated across guides and was not re-read from a current tooltip for this page. Unverified. Shooting the item holder also costs you the item plan."
+  },
+  {
+    "id": "drink",
+    "name": "Drink",
+    "tickets": "5",
+    "activation": "timed",
+    "confidence": "provisional",
+    "effect": "Raises profit while that player is drunk. The window is short, and vision blurs.",
+    "pitfall": "Drinking at the door wastes the window on walking. Give it to someone who already knows the table."
+  },
+  {
+    "id": "time-machine",
+    "name": "Time Machine",
+    "tickets": "6, disputed",
+    "activation": "shift",
+    "confidence": "provisional",
+    "effect": "One press rewinds the last 60 seconds of the shift, puts that minute back on the clock, and reverses every bet in the window. It cannot be used in the lobby, and it cannot rewind past the start of the day.",
+    "pitfall": "Wins reverse too. A teammate’s jackpot inside that minute is taken back. Stake Holder does not upgrade it. wiki.gg lists 6 tickets plus 3 per floor; an early May shop capture did not record a shelf price. Cost is Unverified."
+  },
+  {
+    "id": "camera",
+    "name": "Camera",
+    "tickets": "6, disputed",
+    "activation": "timed",
+    "confidence": "provisional",
+    "effect": "Film another player’s head at the moment they win to bank a cut. Smash or throw the camera to cash out. Extra recorded wins are described as charges that multiply the cash-out.",
+    "pitfall": "Filming a loss wipes the camera’s bank. It will not record your own win, so it is useless solo. Keep it off until the win is obvious. wiki.gg’s +3 tickets per floor was not in the launch price tables."
+  },
+  {
+    "id": "stake-holder",
+    "name": "Stake Holder",
+    "tickets": "6",
+    "activation": "passive",
+    "confidence": "provisional",
+    "effect": "A held passive that amplifies other items. Guides checked against V1.0.30 say each copy adds 0.5 to the item multiplier and that the value scales with quota, so it is worth more on later days.",
+    "pitfall": "It does nothing for the Time Machine, and it does nothing on a day when nobody else is holding a real item. Selling it back drops the scaling."
+  },
+  {
+    "id": "microphone",
+    "name": "Microphone",
+    "tickets": "6",
+    "activation": "timed",
+    "confidence": "provisional",
+    "effect": "While the holder sings, nearby profit goes up.",
+    "pitfall": "Players on the other side of the floor get nothing. Bunch up first, the same way you would for the statue."
+  },
+  {
+    "id": "insurance",
+    "name": "Insurance",
+    "tickets": "7",
+    "activation": "passive",
+    "confidence": "provisional",
+    "effect": "Reduces the size of a loss. Exact trigger timing was not captured beyond “it decreases loss.”",
+    "pitfall": "It is a cushion, not a license to all-in. The activation window is Unverified beyond the tooltip paraphrase."
+  },
+  {
+    "id": "holy-statue",
+    "name": "Holy Statue",
+    "tickets": "7",
+    "activation": "timed",
+    "confidence": "provisional",
+    "effect": "While it is active, nearby players are shielded from losses. It has a limited number of uses and a short window.",
+    "pitfall": "Activate it with the crew already standing at the table. Betting after the window closes, or from across the room, is the usual way this 7-ticket buy does nothing."
+  },
+  {
+    "id": "gamblers-confidence",
+    "name": "Gambler's Confidence",
+    "tickets": "7",
+    "activation": "passive",
+    "confidence": "provisional",
+    "effect": "Raises profit and is described as lasting the whole casino day.",
+    "pitfall": "It is not a reason to change tables every thirty seconds. Pair a short Drink with it only when a specific bet is about to resolve."
+  },
+  {
+    "id": "bonus-draw",
+    "name": "Bonus Draw",
+    "tickets": "8",
+    "activation": "passive",
+    "confidence": "provisional",
+    "effect": "Awards a ticket when you profit.",
+    "pitfall": "Buy it on a day you can win repeatedly without donating the bank. It is a bad panic purchase."
+  }
+]

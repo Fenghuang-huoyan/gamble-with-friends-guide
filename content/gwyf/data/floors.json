@@ -1,0 +1,38 @@
+[
+  {
+    "id": "floor-1",
+    "name": "Floor 1",
+    "confidence": "provisional",
+    "opens": "Day 1. This is the only floor the store text and the guides fully agree is open immediately.",
+    "tables": "Roulette, Blackjack, Slots, Street Craps, Duck Race, Wheel of Fortune.",
+    "focus": "Build a cushion. Ten floor achievements live here, all of them Phone Booth challenges.",
+    "tickets": "One guide says a cleared Floor 1 quota pays 9 tickets. That payout was not in a patch note. Unverified."
+  },
+  {
+    "id": "floor-2",
+    "name": "Floor 2",
+    "confidence": "provisional",
+    "opens": "Community calendar: starting day 4, which is the same ladder as “after three days” if day 1 is the first casino day. Cash does not open it early.",
+    "tables": "Crash, Plinko, Penguin Cross, Keno, HiLo, and Money Wheel join the rotation. The day’s actual machines are randomized.",
+    "focus": "Nine Phone Booth achievements, including Clean Fall on Plinko.",
+    "tickets": "The same guide says 11 tickets for a clear. Unverified."
+  },
+  {
+    "id": "floor-3",
+    "name": "Floor 3",
+    "confidence": "provisional",
+    "opens": "Starting day 7 / “after six days,” by the same community reading. Not a cash threshold.",
+    "tables": "1P Poker, Dragon Tower, and Mine Sweeper debut. Wheel of Fortune returns for Keep It Spinning.",
+    "focus": "Ten achievements. Step Into Fire is a deliberate Dragon Tower loss.",
+    "tickets": "Reported 13 tickets for a clear. Unverified."
+  },
+  {
+    "id": "floor-4",
+    "name": "Floor 4",
+    "confidence": "provisional",
+    "opens": "Starting day 10 / “after nine days.” Day 13 is the ending choice, not a fifth floor.",
+    "tables": "Harder versions of tables you already know. No new confirmed game name is exclusive to this floor.",
+    "focus": "Thirteen achievements, including two deliberate losses: Straight Down and High Risk Wedge.",
+    "tickets": "Reported 15 tickets for a clear, and a shop reroll that climbs from 2 tickets on Floor 1 to 5 on Floor 4. Both figures are Unverified."
+  }
+]

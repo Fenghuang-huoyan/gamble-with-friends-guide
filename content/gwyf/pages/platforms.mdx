@@ -1,0 +1,70 @@
+---
+title: "Is Gamble With Your Friends on PS5, Xbox, Switch, or Steam Deck?"
+description: "Gamble With Your Friends is a Windows Steam game. No PS5, Xbox, Switch, Mac, or Linux build is listed. Steam Deck is Unverified."
+h1: "Platforms"
+section: "Fix & Setup"
+order: 13
+verifiedAgainst: "Steam store platform flags and system requirements, plus the developer FAQ, checked 18 Oct 2026. No ProtonDB rating is cited."
+quickAnswer:
+  - "Windows on Steam. That is the only build the store page lists, and the developer FAQ says they are only supporting Windows PCs for now."
+  - "It is not on PS5, Xbox, or Switch. It is not a social poker app, and it does not cross-play with one."
+  - "Mac and Linux are not listed. There is no Mac or Linux requirements block on the store API response we checked."
+  - "Steam Deck is Unverified. Do not treat a missing Proton rating as Playable or Unsupported. Test it, or assume it is not a target."
+  - "Co-op is Steam friends on that Windows build, up to six people. Family Sharing is a store tag, not a second copy of the lobby."
+sources:
+  - label: "Steam store page and store API platform flags"
+    url: "https://store.steampowered.com/app/3892270/Gamble_With_Your_Friends/"
+  - label: "Developer FAQ: Windows PCs for now"
+    url: "https://steamcommunity.com/app/3892270/discussions/0/845130462379808369/"
+related:
+  - href: "/online-fix"
+    label: "Friends-only lobbies"
+  - href: "/faq"
+    label: "Price and solo"
+---
+
+import StepTable from '../../../framework/components/StepTable.astro';
+import Callout from '../../../framework/components/Callout.astro';
+import Checked from '../../../framework/components/Checked.astro';
+
+## The short table
+
+<Checked version="store page, 18 Oct 2026" note="Platform flags came from the Steam store API the same day: windows true, mac false, linux false." />
+
+<StepTable
+  caption="Where you can play"
+  columns={["Platform", "Listed?", "Source"]}
+  rows={[
+    ["Windows 10 / 11", "Yes", "Store requirements and the only platform flag set to true."],
+    ["Mac", "No", "Store API mac flag is false. No Mac requirements block."],
+    ["Linux", "No", "Store API linux flag is false."],
+    ["Steam Deck / Proton", "Unverified", "Not in the developer FAQ. No rating is copied onto this page."],
+    ["PS5", "No", "Not listed. The FAQ says Windows PCs for now."],
+    ["Xbox", "No", "Not listed."],
+    ["Nintendo Switch", "No", "Not listed."],
+    ["Cross-play with consoles", "No", "There is no console version to cross-play with. Lobbies are Steam friends."],
+    ["Phone", "No", "It is not a mobile poker, Plinko, or social-casino app."],
+  ]}
+/>
+
+<Callout tone="warn" title="If another site talked about virtual poker">
+  That page answered a different hobby. Gamble With Your Friends is a co-op quota game in a casino tower, published by TENSTACK, AppID 3892270. Heart-rate tips, cross-platform poker lobbies, and “is it on PS5” articles that never mention the shared bank are not about this game.
+</Callout>
+
+## What a Windows PC needs
+
+Minimum, from the store: Windows 10, Core i5-6600, 8 GB RAM, GTX 970, DirectX 11, broadband, 3 GB free.
+
+Recommended: Windows 11, Core i7-8700, 8 GB RAM, GTX 1070, DirectX 12, the same network and disk.
+
+Those are the developer’s numbers. This page does not add a frame-rate claim. V1.0.30 added input mapping, a higher controller-sensitivity cap, and accessibility options that already existed for head bob and camera smoothing (the FAQ points at Settings, Accessibility). Motion-sick players are told to avoid the body shredder. That is official advice, and it is more useful than a fake benchmark.
+
+## Deck, stated honestly
+
+People will try the Deck. The studio’s public line is Windows PCs. Until a current Proton report is worth citing, the answer here stays Unverified. If it runs for you, the lobby rules do not change: the other players still need the Windows build, friends-only invites, and no VPN. A Deck host with a weak uplink is a bad host. The FAQ already says the best connection should host.
+
+## Buying and sharing
+
+The US price observed on 18 Oct 2026 was $7.99, discounted to $4.95. It will move. The store page lists Family Sharing as a feature. This wiki does not promise that a shared library seat can sit in a co-op lobby with the owner. Try it, or buy a second copy. Online play is friends on Steam, not a console account link.
+
+Languages: English is the full-audio language on the store list. V1.0.30 added a main-menu language picker for German, Simplified Chinese, Italian, Ukrainian, Spanish (Spain), Japanese, Russian, Korean, Latin American Spanish, Brazilian Portuguese, French, Turkish, and Polish. Interface support was already broader than audio. That is a localization note, not a platform.

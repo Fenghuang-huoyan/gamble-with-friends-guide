@@ -1,0 +1,86 @@
+---
+title: "Gamble With Your Friends Item Combos — Camera, Time Machine, Taser + Golden Chip"
+description: "The three Gamble With Your Friends item setups people misplay: Taser before Golden Chip, Time Machine only on a net loss, and Camera on a teammate’s head."
+h1: "Item combos"
+section: "Reference"
+order: 8
+verifiedAgainst: "Time Machine and Camera mechanics from wiki.gg. Taser timing and the 5x cap from a tips page stamped V1.0.30. All of it is community detail and marked Unverified against our own client."
+quickAnswer:
+  - "Taser first, Golden Chip second, same keypad. The chip bets whatever the maximum is at that moment, for free. Used first, it bets the small cap."
+  - "A full Taser contact is described as about 10 seconds and a 5x cap, lasting the rest of the day. You can let go early and raise a second machine with the leftover charge."
+  - "Time Machine rewinds 60 seconds of everyone’s results. Losses come back. Wins leave. Call the minute before anyone presses it. It will not fire in the lobby."
+  - "Camera films another player’s head at the instant they win, then you smash it to cash out. A filmed loss wipes the camera. It cannot film you, so solo is a waste."
+  - "Holy Statue is the other combo that “fails”: the crew was not standing next to it, or they kept betting after the window."
+sources:
+  - label: "wiki.gg Time Machine"
+    url: "https://gamblewithyourfriends.wiki.gg/wiki/Time_machine"
+  - label: "wiki.gg Camera"
+    url: "https://gamblewithyourfriends.wiki.gg/wiki/Camera"
+  - label: "Blueprinted tips, Taser and Time Machine, checked against V1.0.30"
+    url: "https://blueprintedgaming.com/docs/gamble-with-your-friends/tips-and-tricks"
+  - label: "games.gg item combos, June 2026"
+    url: "https://games.gg/gamble-with-your-friends/guides/gamble-with-your-friends-best-item-combos/"
+related:
+  - href: "/items"
+    label: "Full shelf and activation types"
+  - href: "/quota-strategy"
+    label: "Who is allowed to press the item"
+  - href: "/save-scum"
+    label: "If the result was bad and you have no Time Machine"
+---
+
+import ComboTables from '../../../framework/components/ComboTables.astro';
+import Callout from '../../../framework/components/Callout.astro';
+import Checked from '../../../framework/components/Checked.astro';
+
+## Taser, then the chip
+
+This is the combo with an order you can get wrong in one second. The Taser raises a keypad’s maximum bet. The Golden Chip then places one free all-in at that maximum. Reverse the order and the free bet is spent at the old cap. You do not get a second chip.
+
+<Checked version="V1.0.30" note="The 10-second / 5x description is the stamped community tip. Confirm the cap on the keypad before you spend the chip." />
+
+<ComboTables />
+
+The caller names the table first. Good targets in the combo guides are Roulette, Blackjack, Street Craps, and either wheel, because a higher maximum is worth more there than on a tiny minimum-bet grind. The timer’s only extra job is to stop the crew from “letting it ride” with a real all-in immediately after the free one.
+
+## Time Machine reverses the minute, not your feelings
+
+wiki.gg’s description, paraphrased and shortened:
+
+- One use. The item is gone.
+- The shift must be running. The lobby will not accept it.
+- The day clock moves back 60 seconds, unless that would pass the start of the day, in which case you simply return to the start.
+- Every gambling result in that window reverses. A loss is refunded. A win is taken away.
+- Stake Holder, which buffs other items, does nothing for this one.
+
+So the failure mode is social, not mechanical. You lost a bad Crash. Across the room, someone just hit a jackpot inside the same minute. You press the machine to be a hero, and you delete their jackpot. Ask for the net of the last minute. If the crew is up, put it away.
+
+After the rewind, do not repeat the same bet out of spite. The item bought you the minute back. It did not buy a new seed. If the table is one that replays, you already know the result. If it is Plinko or a wheel, you do not. Either way, change the decision. The [save scum page](/save-scum) is the version of this trick that does not cost a Time Machine.
+
+Price is messy enough to keep out of the steps. wiki.gg says 6 tickets and +3 more per floor. A launch-week shelf capture did not record a price and some notes treat it as a Mystery Box pull. Unverified. Do not build a ticket route that assumes you can buy one every morning.
+
+## Camera: head, win, smash
+
+The store-style tooltip is “capture a winning player for extra profit.” The mechanics guides add the parts that make it look broken:
+
+- Aim at the player’s head, not at the machine. The check is the head in view.
+- You need the moment they win or lose, not the whole game.
+- A win banks a cut. Guides say later wins add charges that multiply the cash-out.
+- A loss while the camera is live wipes what you already banked. Default state is off.
+- Cash out by throwing or smashing it. A photo you never smash is a souvenir.
+- It will not record your own win. Solo Camera is a dead item.
+- Stake Holder is described as increasing the cut. That is the opposite of the Time Machine interaction.
+
+Drink plus Camera is the soft version: the drunk player takes a planned winning bet, someone else films the head, then the camera hits the floor. Drink blurs vision, so the drunk player should be the one who already knows the table. Gambler's Confidence, if you are holding it, is the all-day profit passive underneath that window. Stacking three profit effects without a stop rule is how the bank still dies. Film one win. Smash. Leave.
+
+## Statue, drink, microphone
+
+These are not the headline searches, and they fail the same way.
+
+Holy Statue prevents nearby losses while it is active, for a limited number of uses. Stand together at Slots, Roulette, or a wheel, activate, bet, stop. A teammate on the far side of the floor is not nearby. Betting after the glow ends is not protected.
+
+Microphone is the same geography: singing raises profit for people close enough to count. Drink is a timer on one body. None of them forgive a spread-out crew.
+
+<Callout tone="note" title="If you remember one sentence">
+  Name the table, put the holder on it, fire setup before payoff, and stop when the window ends. Every combo on this page is that sentence with a different prop.
+</Callout>

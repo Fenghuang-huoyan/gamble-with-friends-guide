@@ -1,0 +1,8 @@
+---
+interface Props {
+  level: 'verified' | 'provisional' | 'disputed';
+}
+const { level } = Astro.props;
+const label = level === 'verified' ? 'Verified' : 'Unverified';
+---
+<span class:list={['pill', `pill-${level}`]}>{label}</span>

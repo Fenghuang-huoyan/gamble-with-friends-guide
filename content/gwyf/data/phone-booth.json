@@ -1,0 +1,34 @@
+{
+  "title": "Phone Booth checklist — do this before the casino",
+  "intro": "Floor achievements do not care that you already pulled off the feat. They care that the loan shark’s booth asked you to do it, and that you accepted, before you walked in. Checks below are local to this browser.",
+  "steps": [
+    {
+      "id": "booth",
+      "text": "Find the phone booth in the neighborhood. This is before the casino, not inside it."
+    },
+    {
+      "id": "read",
+      "text": "Read the challenge. If it is the wrong floor or the wrong table, reroll it. The Steam 100% guide says a reroll costs 1 ticket — confirm that price on your client."
+    },
+    {
+      "id": "accept",
+      "text": "Accept the challenge. Then enter the casino. A perfect 24x Plinko or a Blackjack hand under 10 does nothing if this challenge asked for something else."
+    },
+    {
+      "id": "one",
+      "text": "Chase one challenge that day. A second target is how the shared bank misses quota."
+    },
+    {
+      "id": "floor",
+      "text": "The booth offers challenges for the floor you are on. Climb before you finish the lower floor and the old challenges stop showing up. Clear them first, or plan another save."
+    },
+    {
+      "id": "loss",
+      "text": "Step Into Fire, Straight Down, and High Risk Wedge want deliberate losses. Bank the quota before you throw those games."
+    },
+    {
+      "id": "bug",
+      "text": "If it still does not pop, run this list again before you call it a bug. This site does not publish a “still glitched” list. Older lists were tied to early builds and were not re-proven against V1.0.30."
+    }
+  ]
+}

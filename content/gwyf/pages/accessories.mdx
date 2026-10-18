@@ -1,0 +1,81 @@
+---
+title: "Gamble With Your Friends Accessories — Shop Reset and Cosmetics"
+description: "How cosmetics work in Gamble With Your Friends, and the reported new-save shop reset. The exact steps are Unverified on the current build."
+h1: "Accessories and cosmetics"
+section: "Reference"
+order: 11
+verifiedAgainst: "The store says tickets buy neighborhood cosmetics. The reset loop is from two community methods that do not match each other. Both are labeled Unverified. Nothing here was re-tested on 18 Oct 2026."
+quickAnswer:
+  - "Cosmetics are bought with tickets in the neighborhood shop. They do not help the quota. On a real run, buy an item instead."
+  - "Guides agree on one structural fact: a new save hands you a fresh starting balance, and cosmetic unlocks are described as sticking to the account rather than the deleted file."
+  - "One method is buy, delete the save, repeat, and it cites 15 starting tickets. Another says quit to the menu and rejoin the same file so stock or funds refresh, then delete."
+  - "Those step lists disagree. Treat the button-by-button loop as Unverified until you watch it on your own client."
+  - "V1.0.30 and V1.0.11 both added cosmetics. That confirms the shop is still part of the game. It does not confirm the reset."
+sources:
+  - label: "Steam store, cosmetics in the neighborhood"
+    url: "https://store.steampowered.com/app/3892270/Gamble_With_Your_Friends/"
+  - label: "V1.0.11 and V1.0.30 cosmetic notes"
+    url: "https://steamcommunity.com/app/3892270/allnews/"
+  - label: "GameRant, account-wide unlocks and a new-save loop"
+    url: "https://gamerant.com/gamble-with-your-friends-how-get-unlock-cosmetics-clothes-fast/"
+  - label: "NeonLights Media, rejoin-then-delete variant"
+    url: "https://www.neonlightsmedia.com/blog/gamble-with-your-friends-unlock-all-accessories"
+related:
+  - href: "/items"
+    label: "Spend run tickets here instead"
+  - href: "/beginner-guide"
+    label: "What a first save is for"
+---
+
+import StepTable from '../../../framework/components/StepTable.astro';
+import Callout from '../../../framework/components/Callout.astro';
+import Checked from '../../../framework/components/Checked.astro';
+
+## Spend run tickets on the run
+
+The store is blunt: tickets buy cosmetics in the neighborhood, it is not optimal, and your friends may scream. On a save you care about, that scream is correct. A hat does not raise a keypad cap. A Golden Chip might.
+
+Do the fashion pass on a save you are willing to throw away, after you understand the loop below is a community report.
+
+<Checked version="not re-tested" note="T6 in our own notes: the shop-reset steps need an in-game recheck. This page refuses to promote them to fact." />
+
+## What both reports share
+
+GameRant and a later accessory write-up describe the same economy glitch, in different button orders:
+
+- Unlock state for clothes is account-wide, not trapped in the save you bought them on.
+- Starting funds come back when you make a new save.
+- Therefore a throwaway save can buy the current stock, and a newer throwaway save can buy the next stock, without spending the tickets from a serious run.
+
+A separate V1.0.30-checked tip says tickets belong to the save, not the profile, and a new game puts you back on a small float. That supports “funds reset.” It does not, by itself, prove unlocks persist. The account-wide claim is the GameRant sentence. Unverified, and plausible, and not something to bet a 100% file on.
+
+Stock is also described as random and as changing after each in-game day. If that is still true, simply playing days rotates the mannequins. The reset loop is the impatient version.
+
+## The two loops, side by side
+
+<StepTable
+  caption="Reported methods — pick neither until you confirm one"
+  columns={["", "Delete-and-restart", "Rejoin, then delete"]}
+  rows={[
+    ["Where it came from", "GameRant cosmetics guide", "A later “unlock all accessories” write-up"],
+    ["Start", "New save, neighborhood shop.", "New save, neighborhood shop."],
+    ["Buy", "Spend the starting tickets. The figure quoted is 15.", "Spend the starting balance. They describe it as cash."],
+    ["Refresh", "Return to the menu, delete the save, start another.", "Esc, quit, rejoin the same save. Funds or stock are supposed to refresh. Then delete and start clean."],
+    ["Extra tickets", "Shredder: sell mouth and eye for “about 12” more tickets, then buy again.", "Not part of that write-up."],
+    ["Status here", "Unverified. 15 and 12 are single-source numbers.", "Unverified, and it conflicts with the first method."],
+  ]}
+/>
+
+<Callout tone="warn" title="Do this on an empty slot">
+  Deleting a save deletes that run. Use a slot you do not need for endings or floor challenges. V1.0.30’s starting-ticket slider, set before the slot is created, may change how many tickets a fresh file has. If you turned that slider up, you are not reproducing the “15 tickets” report.
+</Callout>
+
+## What is confirmed about cosmetics
+
+V1.0.11 added more cosmetics and adjusted meshes so they fit the body. V1.0.30 added another batch and said previous ones got fixes. So the shop is a live part of the game, and older “every item” lists are incomplete. This page does not inventory every hat. The useful question is whether the unlock survived a deleted save. Watch the mannequin on the next file. If the owned piece is gone, the account-wide claim was wrong on your build, and the loop stops being worth it.
+
+Emotes and customization are a store bullet (“many emotes + customization options”). How emotes are bound was not documented in the sources used here.
+
+## If you only want one outfit
+
+Play a day, clear quota, buy the single piece, and leave the rest of the tickets for items. That path uses only the store’s own description. It is slower. It is also the one that cannot wreck a save file.

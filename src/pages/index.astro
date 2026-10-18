@@ -1,0 +1,179 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '@framework/layouts/BaseLayout.astro';
+import QuickAnswer from '@framework/components/QuickAnswer.astro';
+import VersionBadge from '@framework/components/VersionBadge.astro';
+import AdSlot from '@framework/components/AdSlot.astro';
+import FaqList from '@framework/components/FaqList.astro';
+import { loadData } from '@framework/lib/content';
+import { siteConfig } from '@site/site.config';
+import { faqJsonLd, websiteJsonLd } from '@framework/lib/seo';
+
+const meta = loadData<{
+  players: string;
+  gamesClaimed: number;
+  achievements: number;
+  floors: number;
+  endings: number;
+  quotaMinutes: number;
+  playtime: string;
+  listPriceUsd: string;
+  salePriceUsd: string;
+  salePercent: number;
+  priceObservedAt: string;
+  englishReviewPositive: number;
+  englishReviewCount: number;
+  latestNamedUpdate: string;
+  latestNamedUpdateDate: string;
+  copiesWeek: string;
+  copiesMonth: string;
+}>('meta');
+
+const faq = loadData<{ q: string; a: string; featured?: boolean }[]>('faq');
+const pages = (await getCollection('pages')).sort((a, b) => a.data.order - b.data.order);
+const problems = [
+  {
+    href: '/beginner-guide',
+    num: '01',
+    title: 'First day',
+    text: 'Shared bank, five minutes, and the moment you are supposed to stop betting.',
+  },
+  {
+    href: '/achievements',
+    num: '02',
+    title: 'It didn’t unlock',
+    text: 'You did the feat. Steam stayed quiet. Start at the Phone Booth, not a bug list.',
+  },
+  {
+    href: '/endings',
+    num: '03',
+    title: 'All three endings',
+    text: 'One late save, the payoff first, and the exact moment to press Esc.',
+  },
+  {
+    href: '/online-fix',
+    num: '04',
+    title: 'Can’t join',
+    text: 'Invites, VPNs, and version mismatches. No third-party “online fix” download.',
+  },
+];
+---
+<BaseLayout
+  title={siteConfig.homeTitle}
+  description={siteConfig.homeDescription}
+  jsonLd={[
+    websiteJsonLd(),
+    faqJsonLd(faq.filter((item) => item.featured).map((item) => ({ q: item.q, a: item.a }))),
+  ]}
+>
+  <main id="content">
+    <div class="shell">
+      <p class="tape">
+        <span>Fan wiki · App {siteConfig.steamAppId}</span>
+        <span>Not real-money gambling</span>
+        <span>{meta.latestNamedUpdate} · {meta.latestNamedUpdateDate}</span>
+      </p>
+      <section class="hero">
+        <div class="hero-grid">
+          <div>
+            <p class="kicker">{siteConfig.developer} · {siteConfig.publisher}</p>
+            <h1>Gamble With Your Friends Wiki</h1>
+            <p class="lede">
+              A short set of answers for the co-op quota game: one <em>shared bank</em>, a five-minute day,
+              and the three places a run quietly fails — the Phone Booth, the day-13 coin, and an item that never armed.
+            </p>
+            <div class="cta-row">
+              <a class="btn" href={siteConfig.steamUrl}>View on Steam</a>
+              <a class="btn ghost" href={siteConfig.discordUrl}>Official Discord</a>
+              <VersionBadge />
+            </div>
+            <p class="version-note">{siteConfig.version.detail} Page checked 18 Oct 2026.</p>
+          </div>
+          <aside class="shift-card">
+            <header>
+              <strong>Shift card</strong>
+              <span>From the store page</span>
+            </header>
+            <dl>
+              <div><dt>Crew</dt><dd>{meta.players}</dd></div>
+              <div><dt>Quota window</dt><dd>{meta.quotaMinutes} minutes</dd></div>
+              <div><dt>Floors</dt><dd>{meta.floors}</dd></div>
+              <div><dt>Endings</dt><dd>{meta.endings}</dd></div>
+              <div><dt>Achievements</dt><dd>{meta.achievements}</dd></div>
+              <div><dt>Games of chance</dt><dd>{meta.gamesClaimed}</dd></div>
+              <div><dt>A clear run</dt><dd>{meta.playtime}</dd></div>
+            </dl>
+          </aside>
+        </div>
+      </section>
+
+      <section class="section">
+        <QuickAnswer
+          sentences={[
+            'You share one bank account and one debt with up to five friends. There is no matchmaking.',
+            'Each day gives you five minutes in the tower to hit the loan shark’s quota, unless you changed that timer before creating the save.',
+            'Tickets from a clear buy items that can bend the next day. They also buy cosmetics, which do not.',
+            `US Steam price on ${meta.priceObservedAt}: $${meta.listPriceUsd}, sale $${meta.salePriceUsd} (−${meta.salePercent}%). It will change.`,
+          ]}
+        />
+      </section>
+      <AdSlot name="homeHero" />
+
+      <section class="section">
+        <h2>Where are you stuck?</h2>
+        <p class="section-intro">Four doors. The rest of the wiki hangs off these, instead of a directory of three hundred URLs.</p>
+        <div class="problem-grid">
+          {problems.map((problem) => (
+            <a class="problem" href={problem.href}>
+              <span class="num">{problem.num}</span>
+              <h3>{problem.title}</h3>
+              <p>{problem.text}</p>
+            </a>
+          ))}
+        </div>
+      </section>
+
+      <section class="stats" aria-label="Game figures from Steam">
+        <div><strong>{meta.gamesClaimed}</strong><span>games on the store page</span></div>
+        <div><strong>{meta.achievements}</strong><span>Steam achievements</span></div>
+        <div><strong>{meta.floors}</strong><span>casino floors</span></div>
+        <div><strong>{meta.endings}</strong><span>endings</span></div>
+      </section>
+
+      <section class="section">
+        <h2>The pages</h2>
+        <p class="section-intro">
+          English only for now. Requirement details that are not from Steam or a patch note are marked Unverified on the page.
+        </p>
+        <div class="card-grid">
+          {pages.map((page) => (
+            <a class="guide-card" href={`/${page.id}`}>
+              <span class="section-tag">{page.data.section}</span>
+              <h3>{page.data.h1}</h3>
+              <p>{page.data.description}</p>
+            </a>
+          ))}
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>What the game is</h2>
+        <p>
+          TEAM GWYF and TENSTACK shipped Gamble With Your Friends on 1 May 2026. The store’s own line: an online 1–6 player co-op “casino crawler” where you share one bank account and one debt, buy sketchy items, and climb a tower to hit a daily quota in five minutes. It also lists proximity voice chat, emotes, and a soundtrack from people who have worked on games like HASTE, ROUNDS, Stick Fight, POST VOID, and TABS.
+        </p>
+        <p>
+          English Steam reviews on {meta.priceObservedAt} were Very Positive, {meta.englishReviewPositive}% of {meta.englishReviewCount.toLocaleString('en-US')}. The studio has announced {meta.copiesWeek} copies in the first week and {meta.copiesMonth} in the first month. Concurrent peak players are left off this site; third-party charts do not agree, and we did not read a SteamDB number.
+        </p>
+        <p>
+          They also ask you not to treat it as a suggestion to gamble with real money. If that is a problem for you, the in-game help menu and the <a href="https://www.ncpgambling.org/">National Council on Problem Gambling</a> are the next stop, not a bigger bet.
+        </p>
+      </section>
+
+      <section class="section home-faq">
+        <h2>Short answers</h2>
+        <FaqList featuredOnly />
+        <p><a class="text-link" href="/faq">All FAQ</a></p>
+      </section>
+    </div>
+  </main>
+</BaseLayout>

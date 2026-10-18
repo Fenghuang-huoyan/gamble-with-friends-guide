@@ -1,0 +1,103 @@
+{
+  "endings": [
+    {
+      "id": "happily",
+      "name": "...And They Lived Happily After",
+      "steamPercent": 11.3,
+      "confidence": "provisional",
+      "choice": "Day 13, walk right and pay at the center ATM.",
+      "result": "The debt is paid. Do this one first if you want all three from one save."
+    },
+    {
+      "id": "let-it-ride",
+      "name": "Let It Ride!",
+      "steamPercent": 14.5,
+      "confidence": "provisional",
+      "choice": "Day 13, walk left and take Double or Nothing.",
+      "result": "The coin is a win. Guides describe the crew’s money doubling."
+    },
+    {
+      "id": "end-of-the-line",
+      "name": "End of the Line",
+      "steamPercent": 11.0,
+      "confidence": "provisional",
+      "choice": "The same left-hand Double or Nothing.",
+      "result": "The coin is a loss. Community descriptions say the account is wiped and an execution scene plays. Spoiler detail, not an official script."
+    }
+  ],
+  "oneSave": {
+    "caption": "One save, three endings — Esc timing",
+    "columns": [
+      "Step",
+      "What you do",
+      "Achievement",
+      "When to press Esc"
+    ],
+    "rows": [
+      [
+        "1",
+        "Reach day 13 with enough in the shared bank to pay. Take the right-hand payoff first. Do not flip the coin yet.",
+        "...And They Lived Happily After",
+        "The moment the achievement pops, press Esc and quit to the menu or close the game. If you watch the ending through, the late-run save can be overwritten."
+      ],
+      [
+        "2",
+        "Reload that same late-run state. Take the left-hand Double or Nothing once, and keep whichever coin you get.",
+        "Let It Ride! or End of the Line",
+        "Esc and quit again as soon as that second achievement pops. Write down whether the coin won or lost."
+      ],
+      [
+        "3",
+        "Reload the final-day lobby, before the choice. Change one thing at the shop: buy an item, reroll stock, or alter the item route. Do not change five things.",
+        "Setup only",
+        "You are not quitting from an ending here. You are moving the route, then going back in."
+      ],
+      [
+        "4",
+        "Return to the choice and take Double or Nothing again.",
+        "The coin result you still need",
+        "If the coin repeats, the shop action did not move the relevant state. Reload earlier and change a different single action. A brand-new save is the fallback, and it means playing the days again."
+      ]
+    ]
+  },
+  "failures": {
+    "caption": "Failure modes",
+    "columns": [
+      "What goes wrong",
+      "What you see",
+      "What to do instead"
+    ],
+    "rows": [
+      [
+        "You stay in the ending",
+        "The achievement popped, then the save moved on.",
+        "Esc out at the popup. The popup is the save point, not the credits."
+      ],
+      [
+        "Same coin every reload",
+        "Win, reload, win again. Or loss, reload, loss.",
+        "The flip is seeded to the route. Change a shop action before the choice. Clicking the coin harder does not reroll it."
+      ],
+      [
+        "Shop reroll does nothing",
+        "You rerolled and the coin still matched.",
+        "Players report this. Reload from earlier in the final day and change a different single action. Do not stack five rerolls and then guess which one mattered."
+      ],
+      [
+        "Payoff was never banked",
+        "You cannot clear the debt, so the safe ending is blocked.",
+        "Finish day 12 with the debt covered. The exact “full debt” check is community-reported."
+      ],
+      [
+        "Endless Mode is on",
+        "Day 13 never offers an ending.",
+        "V1.0.30’s patch notes say Endless Mode blocks the ending and the ending achievements. That toggle is chosen on an empty slot and cannot be changed after the save exists."
+      ],
+      [
+        "You did the bad ending first",
+        "The useful late-run state is gone.",
+        "Payoff first. Coin flips after. Protect the run, then break it."
+      ]
+    ]
+  }
+}

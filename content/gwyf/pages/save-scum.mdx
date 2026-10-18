@@ -1,0 +1,78 @@
+---
+title: "Gamble With Your Friends Save Scum — Seeds, Reloads, and What Won’t Repeat"
+description: "Which Gamble With Your Friends tables replay after a reload, which are physics, and how a shop action moves a stuck result."
+h1: "Save scum and seeds"
+section: "Progress"
+order: 6
+verifiedAgainst: "Mine Sweeper replay is from the Steam 100% guide. Plinko and wheels not replaying is from a V1.0.30-checked tips page. Shop-action rerolls are community ending and save-scum guides. Test on a small bet before you trust a row marked Unverified."
+quickAnswer:
+  - "Reloading is not new luck. On seeded tables it is the same result again."
+  - "Mine Sweeper bombs, card hands, Duck Race winners, and Dragon Tower paths are the ones guides say you can learn and reuse."
+  - "Plinko does not replay. The wheels do not either, according to a V1.0.30-checked tip. A baseball bat is the Plinko assist, not a reload."
+  - "If the result repeats and you need a different one, change one shop action before you try again. Do not press the same bet harder."
+  - "The ending coin follows the same idea. Quit at the achievement popup, or the late save is gone. Full steps are on the endings page."
+sources:
+  - label: "Steam 100% guide, Mine Sweeper reset example"
+    url: "https://steamcommunity.com/sharedfiles/filedetails/?id=3721901485"
+  - label: "Blueprinted tips, seeds vs physics"
+    url: "https://blueprintedgaming.com/docs/gamble-with-your-friends/tips-and-tricks"
+  - label: "Whisper of the House save-scum guide"
+    url: "https://www.whisperofthehouse.com/gamble-with-your-friends/save-scum-guide"
+related:
+  - href: "/endings"
+    label: "Esc timing for the three endings"
+  - href: "/games"
+    label: "Reload column for every table"
+  - href: "/achievements"
+    label: "Clean Fall and the booth"
+---
+
+import StepTable from '../../../framework/components/StepTable.astro';
+import Callout from '../../../framework/components/Callout.astro';
+import Checked from '../../../framework/components/Checked.astro';
+
+## What a reload actually does
+
+The useful mental model, from the Steam guide’s Mine Sweeper demonstration and from later seed write-ups: a lot of tables deal their outcome when the day starts, not when you click. You play, you learn a bomb or a hand, you quit before the day is resolved, you load, and the same deal is waiting. You then play the information.
+
+That is the opposite of “reload until the roulette ball is nice.” A tips page checked against V1.0.30 says card decks come back in the same order, and that physics tables do not. It names Plinko and the wheels as the ones the trick does not touch.
+
+<Checked version="V1.0.30" note="The physics exception is a community stamp, not a patch-note sentence. Prove a new table with a minimum bet before the crew’s money is on it." />
+
+## Test, then scale
+
+<StepTable
+  caption="A reload you can trust"
+  columns={["Step", "Action", "Why"]}
+  rows={[
+    ["1", "Bet the minimum on the table you hope is seeded.", "You are buying information, not quota."],
+    ["2", "Write down the result. Bombs, cards, duck, tower tiles, or the coin.", "Memory is not a strategy at Floor 4."],
+    ["3", "Quit before the day ends. Load the save. Repeat the same action once.", "If it matches, the table is seeded today. If it does not, stop. It is physics or you quit too late."],
+    ["4", "Use the known result at the size the challenge needs, or walk away.", "Scaling a pattern you saw once, on a table that did not repeat, is a donation."],
+    ["5", "Need a different result? Change one shop action, then retest at minimum.", "Buying, rerolling, or swapping the held item is how guides move a stuck sequence. Changing five things teaches you nothing."],
+  ]}
+/>
+
+<Callout tone="warn" title="Quit timing">
+  The day has to be unresolved. If you let the quota resolve, or you watch an ending through, you are no longer on the state you tested. For endings, Esc at the achievement popup is the specific version of this rule.
+</Callout>
+
+## What the sources actually sort
+
+**Replays, with a source.** Mine Sweeper, in the Steam 100% guide, including a worked example of three failed boards becoming a correct one. Blackjack and 1P Poker, via the “card decks replay” tip. Duck Race and Dragon Tower, via save-scum guides that tell you to memorize a winner or a path.
+
+**Does not replay, with a source.** Plinko. Wheel of Fortune and the Money Wheel, grouped as “the wheels.” Clean Fall is a 24x on that physics board. The bat throw (Q, middle pin, third row) is the assist players use instead of a reload. It is not certain.
+
+**Not sorted by this site.** Crash, Penguin Cross, Keno, HiLo, Street Craps, Slots, Roulette, Baccarat. Roulette is a physical ball in the fiction and might belong with the wheels. It might not. The games table marks those Unverified. A minimum-bet test is the check, and it takes one day, not a theory.
+
+## Using it for achievements, quota, and endings
+
+Keep the three jobs apart.
+
+- **Achievements.** Accept the Phone Booth challenge first. Then reload the table that challenge names, if that table replays. A perfect replay on the wrong challenge still does not unlock.
+- **Quota.** Use a reload to test one recovery route. Do not save-scum five machines while the real clock runs down. If the timer is on, the test itself costs minutes unless you quit and reload the whole day.
+- **Endings.** The coin is the important seed. The [endings page](/endings) has the four-step Esc route. The short version: payoff first, quit at the popup, take one coin, quit again, move the shop, take the other coin.
+
+## What this is not
+
+It is not a trainer, a file editor, or the developer console. V1.0.30 did add a console on the backtick key for spawning and teleporting. This page does not document those commands. Save scum here means quit and load, which the game already lets you do, plus the honesty to stop when a table will not repeat.

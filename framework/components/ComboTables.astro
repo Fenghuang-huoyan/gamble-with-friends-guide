@@ -1,0 +1,11 @@
+---
+import { loadData } from '../lib/content';
+import StepTable from './StepTable.astro';
+
+const data = loadData<{
+  taser: { caption: string; columns: string[]; rows: string[][] };
+  mistakes: { caption: string; columns: string[]; rows: string[][] };
+}>('combos');
+---
+<StepTable caption={data.taser.caption} columns={data.taser.columns} rows={data.taser.rows} />
+<StepTable caption={data.mistakes.caption} columns={data.mistakes.columns} rows={data.mistakes.rows} />

@@ -1,0 +1,94 @@
+---
+title: "Gamble With Your Friends Endings — All 3 on One Save"
+description: "How to get all three Gamble With Your Friends endings from one late-run save: day 13 choices, when to press Esc, and how a shop action moves the coin."
+h1: "All three endings"
+section: "Progress"
+order: 5
+verifiedAgainst: "Ending names and Steam percents checked 18 Oct 2026. The day-13 route and Esc timing are community reports (whisper-style guides, PlayerEcho, Blueprinted floors) and are marked Unverified. Endless Mode’s block is from the V1.0.30 notes."
+quickAnswer:
+  - "Three endings, all on day 13. Walk right and pay the debt, or walk left for a Double or Nothing coin."
+  - "Payoff is ...And They Lived Happily After. A winning coin is Let It Ride! A losing coin is End of the Line."
+  - "Do the payoff first. When the achievement pops, press Esc and quit immediately so the late-run save survives."
+  - "Reload, take the coin once, and quit again at the popup. The same reload usually repeats the same coin."
+  - "To get the other coin, reload the final-day lobby and change one shop action before you flip again. If it still repeats, a new save is the honest fallback."
+sources:
+  - label: "Steam store, hidden ending names"
+    url: "https://store.steampowered.com/app/3892270/Gamble_With_Your_Friends/"
+  - label: "V1.0.30 notes on Endless Mode"
+    url: "https://steamcommunity.com/app/3892270/allnews/"
+  - label: "Whisper of the House, all-endings guide (updated May 2026)"
+    url: "https://www.whisperofthehouse.com/gamble-with-your-friends/all-endings-guide"
+  - label: "PlayerEcho endings guide (Oct 2026)"
+    url: "https://playerecho.com/gamble-with-your-friends/endings-guide"
+  - label: "Blueprinted Gaming, casino floors"
+    url: "https://blueprintedgaming.com/docs/gamble-with-your-friends/casino-floors"
+related:
+  - href: "/achievements"
+    label: "Achievement checklist"
+  - href: "/save-scum"
+    label: "Why reloads repeat"
+  - href: "/floors"
+    label: "Day 13 is not a fifth floor"
+---
+
+import OneSaveTables from '../../../framework/components/OneSaveTables.astro';
+import Callout from '../../../framework/components/Callout.astro';
+import Checked from '../../../framework/components/Checked.astro';
+
+## Day 13 has two exits
+
+The store says the game has three endings and about two to three hours of play. It does not describe them. The names Let It Ride!, End of the Line, and ...And They Lived Happily After are on the store’s highlighted achievements, and all three are hidden, so Steam shows no official description until you earn them.
+
+Every detailed route below is from community guides. They agree on the shape: twelve casino days, then a final choice. They disagree on how reliably a shop reroll changes the coin. That disagreement is in the failure table on purpose.
+
+<Checked version="V1.0.30" note="Endless Mode blocking endings is official patch text. The Esc timing is not." />
+
+<OneSaveTables />
+
+Steam percents on that first table are global unlocks on 18 Oct 2026: Let It Ride! 14.5%, ...And They Lived Happily After 11.3%, End of the Line 11.0%. The choice text next to them is Unverified.
+
+## Why Esc is the whole trick
+
+Reloads in this game replay a seeded route. That is useful for Mine Sweeper and painful for endings. If you watch the ending play out, guides say the save advances and you lose the branch. The popup is the moment you still have a choice.
+
+Press Esc. Quit to the menu, or close the game. Then load the same slot. You should be back before the choice, not in a finished file. PlayerEcho describes this as “quit before the day ends, and the load returns you to the start of that day.” If your client does something else, stop and do not keep clicking. The route is community-tested, not guaranteed on every build.
+
+<Callout tone="danger" title="Do the safe ending first">
+  Pay the debt before you flip. A losing coin is a real ending, and it is the one you take on purpose only after the payoff achievement is already on the account. Protect the run, then break it.
+</Callout>
+
+## Moving the coin without pretending it is a fresh 50/50
+
+Take the first coin result you are given and quit. For the opposite result, do not stand in the same lobby state and press the same choice. Guides say the flip is already locked by then.
+
+Change one pre-choice action:
+
+- Buy a single item at the neighborhood shop, or
+- Reroll the shop once, if your client still offers a reroll, or
+- Change which item you are holding into the final day.
+
+Then flip again. Write down what you changed. If the coin matches the old result, that action did not move the state. PlayerEcho notes players for whom a Misfortune Van reroll did nothing. In that case, reload from earlier — the final-day lobby, or the save before the final day — and change a different single thing.
+
+A new save rerolls the route because it is a new seed. It also costs you the days. Use it when the late save is exhausted, not as the first idea.
+
+## What the scenes are, if you want them
+
+These are community descriptions, hidden by default.
+
+- **...And They Lived Happily After.** You pay. The debt ends. Freedom, in the guides’ wording.
+- **Let It Ride!** The coin wins and the pile doubles.
+- **End of the Line.** The coin loses. Guides describe the money disappearing and a short execution scene. It is still just an achievement. Quit at the popup if you still need another ending from this file.
+
+There is no secret fourth ending in the sources checked here. The launch-coin achievements (The Gambler's Blessing, Unlucky :(, Not Feeling It) happen at boot, not on day 13.
+
+## Endless Mode
+
+From the V1.0.30 notes, in plain language: you can turn Endless Mode on in the per-save rules before the slot is created, if you want to keep gambling. Doing so prevents you from seeing the ending, and you cannot unlock the achievements related to the different endings. The developers suggest beating the game first. The setting cannot be edited after the save exists.
+
+Floor achievements are not what that paragraph is about. Do not assume Endless is a 100% file.
+
+## If an ending achievement does not pop
+
+Run the failure table before you call it bugged. Hidden achievements with no Steam description are easy to mis-route. A repeated coin is a seed, not proof of a glitch. A missing payoff is usually a bank that could not cover the debt — guides say you need the debt covered, and the exact figure is Unverified.
+
+Then check the save was not created with Endless Mode. Then check you quit at the popup rather than after the scene. If all of that is true and the matching achievement still does not exist, report it with the build name from Steam. This page will not add it to a glitch list without that.

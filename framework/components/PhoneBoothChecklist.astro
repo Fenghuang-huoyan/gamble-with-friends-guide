@@ -1,0 +1,50 @@
+---
+import { loadData } from '../lib/content';
+import { siteConfig } from '@site/site.config';
+
+const data = loadData<{
+  title: string;
+  intro: string;
+  steps: { id: string; text: string }[];
+}>('phone-booth');
+const storageKey = `${siteConfig.steamAppId}:phone-booth`;
+---
+<section class="callout callout-note" data-phone-booth data-key={storageKey}>
+  <p class="callout-kicker">{data.title}</p>
+  <p>{data.intro}</p>
+  <ol class="booth-list">
+    {data.steps.map((step, index) => (
+      <li>
+        <label>
+          <input type="checkbox" data-step={step.id} />
+          <span><strong>{index + 1}.</strong> {step.text}</span>
+        </label>
+      </li>
+    ))}
+  </ol>
+  <p class="tiny">Checks stay in this browser only.</p>
+</section>
+<script>
+  const storageKey = document.querySelector('[data-phone-booth]')?.getAttribute('data-key');
+  const root = document.querySelector('[data-phone-booth]');
+  if (root && storageKey) {
+    const saved = new Set(JSON.parse(localStorage.getItem(storageKey) || '[]'));
+    root.querySelectorAll('input[data-step]').forEach((input) => {
+      const box = input as HTMLInputElement;
+      box.checked = saved.has(box.dataset.step || '');
+      box.addEventListener('change', () => {
+        const next = new Set(JSON.parse(localStorage.getItem(storageKey) || '[]'));
+        const id = box.dataset.step || '';
+        if (box.checked) next.add(id);
+        else next.delete(id);
+        localStorage.setItem(storageKey, JSON.stringify([...next]));
+      });
+    });
+  }
+</script>
+<style>
+  .booth-list { list-style: none; margin: 0.6rem 0; padding: 0; }
+  .booth-list li { margin: 0.45rem 0; }
+  .booth-list label { display: flex; gap: 0.55rem; align-items: flex-start; cursor: pointer; }
+  .booth-list input { margin-top: 0.3rem; accent-color: #c6d63a; }
+</style>

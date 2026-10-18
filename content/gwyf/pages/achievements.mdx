@@ -1,0 +1,88 @@
+---
+title: "Gamble With Your Friends Achievements — Phone Booth Checklist & 100%"
+description: "All 55 Gamble With Your Friends achievements, the Phone Booth rule that blocks floor unlocks, and why this site will not invent a current bugged list."
+h1: "Achievements"
+section: "Progress"
+order: 4
+verifiedAgainst: "Steam global achievement API pulled 18 Oct 2026 (55 ids). Requirement sentences are community wording from the Steam 100% guide and a V1.0.30-checked write-up. They are marked Unverified."
+quickAnswer:
+  - "There are 55 Steam achievements. Forty-two of them are floor challenges and do not unlock unless you accepted that challenge at the Phone Booth before entering the casino."
+  - "Doing the feat on the wrong challenge, or with no challenge accepted, looks exactly like a bugged achievement. Check the booth first."
+  - "Reroll the booth if the offer is wrong. A Steam 100% guide prices that reroll at 1 ticket — confirm it in your client."
+  - "Challenges follow your current floor. Move up before you finish the lower floor and those offers stop appearing."
+  - "A current “still glitched” list was not verified against V1.0.30. This page does not publish one. Steam percents below are global unlocks on 18 Oct 2026."
+sources:
+  - label: "Steam Web API, global achievement percentages for 3892270"
+    url: "https://api.steampowered.com/ISteamUserStats/GetGlobalAchievementPercentagesForApp/v2/?gameid=3892270"
+  - label: "Steam store highlights and achievement count"
+    url: "https://store.steampowered.com/app/3892270/Gamble_With_Your_Friends/"
+  - label: "Steam guide: 100% Achievement Guide"
+    url: "https://steamcommunity.com/sharedfiles/filedetails/?id=3721901485"
+  - label: "Blueprinted Gaming achievements, sources checked Aug 2026, page updated Sep 2026"
+    url: "https://blueprintedgaming.com/docs/gamble-with-your-friends/achievements"
+related:
+  - href: "/endings"
+    label: "Three endings on one save"
+  - href: "/floors"
+    label: "When each floor opens"
+  - href: "/save-scum"
+    label: "Which tables replay on reload"
+  - href: "/item-combos"
+    label: "Item combos"
+---
+
+import PhoneBoothChecklist from '../../../framework/components/PhoneBoothChecklist.astro';
+import AchievementBrowser from '../../../framework/components/AchievementBrowser.astro';
+import Callout from '../../../framework/components/Callout.astro';
+import Checked from '../../../framework/components/Checked.astro';
+
+## Phone Booth, before anything else
+
+<PhoneBoothChecklist />
+
+<Checked version="V1.0.30" note="The booth rule is repeated by guides that claim a check against that update. It is still community wording, not a line in the patch notes we read. The checklist marks it Unverified in that narrower sense, and it is the failure mode players actually hit." />
+
+The store page confirms the achievement total is 55. It does not print the floor rules. Those come from the Steam 100% guide and from later write-ups that kept the same booth requirement. Where those sources name a streak, a multiplier, or a “lot of money,” the row below uses that claim and flags it Unverified. “A lot” is their phrase, not a number we measured.
+
+## Are achievements bugged right now?
+
+People report feats that do not pop. A lot of those reports are the booth. Separate from that, older community pages described a set of glitched achievements, sometimes “about nine,” tied to builds around v1.0.4. Later notes say some of those were fixed. This page was checked on 18 Oct 2026 and did **not** re-test a glitch list on a live client.
+
+So: no achievement below is marked glitched. If you want a bug report, use Pause Menu, Report A Bug, or support@tenstack.se, and say which challenge was accepted. Do not trust a recycled v1.0.4 list.
+
+<Callout tone="warn" title="Three that want you to lose">
+  Step Into Fire (Floor 3 Dragon Tower, 4 losses), Straight Down (Floor 4 Plinko, 7 losses), and High Risk Wedge (Floor 4 Money Wheel, 5 losses). Bank the quota before you start donating. The loss counts are community figures.
+</Callout>
+
+## The 55
+
+Percents are Steam’s global unlock rate on 18 Oct 2026. They move. Two Floor 1 Blackjack rows have no percent: the API has two Blackjack stats (34.6% and 33.4%) and the public names are Risky Move and No Bust Run, but which percent belongs to which name was not proven. Checkboxes stay in this browser.
+
+<AchievementBrowser />
+
+## Clean Fall, because reload will not save you
+
+Clean Fall is the Floor 2 Plinko 24x. Plinko is physics. Quitting and reloading does not deal you the same drop the way Mine Sweeper deals you the same bombs.
+
+The community assist: baseball bats are lying around, including near the entrance. Carry one to the board, tap Q to throw it lightly, and aim at the middle pin on the third row so the bat blocks the inner lanes and sheds balls toward the outside cups. Guides that claim a V1.0.30 check say the bat was still there. It raises the chance. It does not guarantee the cup. And it still does nothing if the Phone Booth challenge was not Clean Fall.
+
+## Money achievements are a running total
+
+Steam’s internal ids are ACH_MONEY_10M, 100M, 1B, 10B, and 100B. Community names, in that order, are HARDER, BETTER, FASTER, STRONGER, and WORK IS NEVER OVER! The dollar figures follow the ids. The display names are the guide mapping. Minimum-quota days will not get you the last of these. You have to keep money in the run.
+
+V1.0.10 added support for very large displayed numbers, and V1.0.30 said the old 5Qi cap was lifted. That is official. It does not change the five thresholds above.
+
+## What is not an ending
+
+The launch prompt is three achievements of its own. Yes and a win is The Gambler's Blessing. Yes and a loss is Unlucky :(, and guides say the game closes. No is Not Feeling It. The prompt returns, so you can collect the set across restarts. You Reached...PEAK! is the neighborhood obstacle course and the BANG BANG pickup. Real Gambling is not Cool is the GET HELP menu. None of those five are day-13 endings.
+
+The three hidden ending names on the store page are Let It Ride!, End of the Line, and ...And They Lived Happily After. Their route, including the Esc timing, is on the [endings page](/endings).
+
+## A sane 100% order
+
+1. Boot prompt and the help menu, whenever. They are not tied to the booth.
+2. Floor 1 challenges before you care about Floor 2. One a day.
+3. Same pattern on Floors 2, 3, and 4. Deliberate losses only after quota.
+4. Money totals fall out of a run that keeps playing past the minimum. Do not start a fresh save just to “save” money. Tickets do not carry between saves; the money achievements are on the profile as Steam unlocks, but the cash itself is in the save.
+5. Endings last, on a save that is not Endless, with the [one-save Esc route](/endings).
+6. Anything that still fails: booth checklist again, then a bug report. Not a downloaded unlocker.

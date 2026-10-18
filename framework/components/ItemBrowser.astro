@@ -1,0 +1,86 @@
+---
+import { loadData } from '../lib/content';
+import Confidence from './Confidence.astro';
+
+type Item = {
+  id: string;
+  name: string;
+  tickets: string;
+  activation: string;
+  effect: string;
+  pitfall: string;
+  confidence: 'verified' | 'provisional' | 'disputed';
+};
+const items = loadData<Item[]>('items');
+---
+<div data-items>
+  <div class="filters">
+    <input type="search" data-q placeholder="Search items" aria-label="Search items" />
+    <select data-activation aria-label="Activation">
+      <option value="">Any activation</option>
+      <option value="shift">Shift only</option>
+      <option value="passive">Passive / held</option>
+      <option value="timed">Timed or nearby</option>
+      <option value="result">After a result</option>
+    </select>
+  </div>
+  <p class="count" data-count></p>
+  <div class="sheet-head item-grid">
+    <div>Item</div>
+    <div>Tickets</div>
+    <div>When it works</div>
+  </div>
+  {items.map((item) => (
+    <article
+      class="sheet-row item-grid"
+      id={item.id}
+      data-row
+      data-name={`${item.name} ${item.effect} ${item.pitfall}`.toLowerCase()}
+      data-activation={item.activation}
+    >
+      <div>
+        <h3>{item.name}</h3>
+        <p class="meta-line">{item.effect} <Confidence level={item.confidence} /></p>
+        <p class="tiny">{item.pitfall}</p>
+      </div>
+      <div>
+        <span class="cell-label">Tickets</span>
+        {item.tickets}
+      </div>
+      <div>
+        <span class="cell-label">When it works</span>
+        {item.activation}
+      </div>
+    </article>
+  ))}
+</div>
+<script>
+  const root = document.querySelector('[data-items]');
+  if (root) {
+    const q = root.querySelector('[data-q]') as HTMLInputElement;
+    const activation = root.querySelector('[data-activation]') as HTMLSelectElement;
+    const count = root.querySelector('[data-count]');
+    const rows = [...root.querySelectorAll('[data-row]')] as HTMLElement[];
+    const apply = () => {
+      const query = q.value.trim().toLowerCase();
+      let shown = 0;
+      rows.forEach((row) => {
+        const ok =
+          (!query || (row.dataset.name || '').includes(query)) &&
+          (!activation.value || row.dataset.activation === activation.value);
+        row.hidden = !ok;
+        if (ok) shown += 1;
+      });
+      if (count) count.textContent = `${shown} of ${rows.length} items. Ticket prices are community shop notes, not a current in-game capture.`;
+    };
+    q.addEventListener('input', apply);
+    activation.addEventListener('input', apply);
+    apply();
+  }
+</script>
+<style>
+  .item-grid { grid-template-columns: 1.6fr 0.45fr 0.7fr; }
+  @media (max-width: 760px) {
+    .item-grid.sheet-row { display: block; }
+  }
+</style>

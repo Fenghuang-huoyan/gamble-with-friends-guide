@@ -1,0 +1,31 @@
+---
+import { loadData } from '../lib/content';
+import Confidence from './Confidence.astro';
+
+const floors = loadData<{
+  id: string;
+  name: string;
+  opens: string;
+  tables: string;
+  focus: string;
+  tickets: string;
+  confidence: 'verified' | 'provisional' | 'disputed';
+}[]>('floors');
+---
+<div class="sheet">
+  <p class="caption">Four floors</p>
+  <div class="sheet-head" style="grid-template-columns: 0.7fr 1fr 1.3fr 0.8fr;">
+    <div>Floor</div><div>When it opens</div><div>Tables</div><div>Tickets</div>
+  </div>
+  {floors.map((floor) => (
+    <div class="sheet-row" id={floor.id} style="grid-template-columns: 0.7fr 1fr 1.3fr 0.8fr;">
+      <div>
+        <strong>{floor.name}</strong>
+        <p class="tiny">{floor.focus}</p>
+      </div>
+      <div><span class="cell-label">When it opens</span>{floor.opens} <Confidence level={floor.confidence} /></div>
+      <div><span class="cell-label">Tables</span>{floor.tables}</div>
+      <div><span class="cell-label">Tickets</span>{floor.tickets}</div>
+    </div>
+  ))}
+</div>

@@ -1,0 +1,72 @@
+---
+title: "Gamble With Your Friends Items — When They Work and When They Don’t"
+description: "All 15 community-listed Gamble With Your Friends items, ticket costs, and the activation rules that make a purchase look broken."
+h1: "Items"
+section: "Reference"
+order: 7
+verifiedAgainst: "Item names and launch-era ticket prices come from shop write-ups (May–June 2026) cross-checked with wiki.gg pages for Time Machine and Camera. Costs and exact triggers are Unverified against a 18 Oct 2026 client. No drop rates."
+quickAnswer:
+  - "Buying an item is not using it. Someone has to pick it up in the shop, then trigger it on the right target during the casino shift."
+  - "Time Machine, Taser, and Golden Chip only matter inside a running day. The Time Machine will not arm in the lobby, and it rewinds wins as well as losses."
+  - "Holy Statue, Drink, Microphone, and Camera are windows. Group up, use them at the moment of the bet or the win, and stop when the window ends."
+  - "Stake Holder and Gambler's Confidence sit on you and amplify a plan you already have. Stake Holder does not buff the Time Machine."
+  - "Ticket prices below are community shop notes, not a price list we photographed on the current build. Mystery Box odds are omitted on purpose."
+sources:
+  - label: "Steam store: tickets, 15+ items, body parts"
+    url: "https://store.steampowered.com/app/3892270/Gamble_With_Your_Friends/"
+  - label: "wiki.gg, Time Machine"
+    url: "https://gamblewithyourfriends.wiki.gg/wiki/Time_machine"
+  - label: "wiki.gg, Camera"
+    url: "https://gamblewithyourfriends.wiki.gg/wiki/Camera"
+  - label: "Blueprinted Gaming tips, checked against V1.0.30"
+    url: "https://blueprintedgaming.com/docs/gamble-with-your-friends/tips-and-tricks"
+related:
+  - href: "/item-combos"
+    label: "Camera, Time Machine, Taser + chip"
+  - href: "/quota-strategy"
+    label: "When the Quota Gun is worth it"
+  - href: "/accessories"
+    label: "Don’t spend run tickets on hats"
+---
+
+import ItemBrowser from '../../../framework/components/ItemBrowser.astro';
+import Callout from '../../../framework/components/Callout.astro';
+import Checked from '../../../framework/components/Checked.astro';
+
+## Three ways an item turns on
+
+Most “this item does nothing” posts are an activation miss. Sort the shelf into three buckets before you memorize names.
+
+**Shift actives.** The casino day has to be running. Time Machine is the strict example: one press, during the shift, never in the lobby, and it cannot rewind earlier than the start of the day. Taser has to touch a keypad. Golden Chip spends itself as one free all-in at whatever the cap is right then. Quota Gun has to be aimed at a body. Mystery Box still needs someone to pick up the result.
+
+**Timed and nearby.** Holy Statue shields players standing by the holder, and only while it is active. Drink raises profit during a short drunk window and blurs vision. Microphone raises nearby profit while the holder sings. Camera banks a cut of someone else’s win if their head is in frame at that second, then you smash it to cash out. A loss on camera wipes the bank inside the camera.
+
+**Passives you hold.** Stake Holder amplifies other items and, in V1.0.30-checked notes, scales with the quota so it is worth more later. It does not upgrade the Time Machine. Gambler's Confidence is described as a profit bump for the whole day. Insurance reduces losses; the exact moment it applies is fuzzier than the tooltip paraphrase, so that timing stays Unverified. Bonus Draw pays a ticket when you profit, which is only good if you can profit on repeat.
+
+<Checked version="V1.0.30" note="Taser duration, Stake Holder’s +0.5, and the Time Machine win-reversal are from a tips page that stamps that version. Treat the numbers as community-checked, not as a developer sheet." />
+
+There is no separate “books” category in the sources checked for this page. If a passive looks like a book on your client, it is still one of the held items above until a newer source names something else.
+
+<Callout tone="warn" title="Pickup is its own step">
+  Shop screenshots from launch week show an E prompt to pick an item up. Paying the tickets and leaving it on the counter is a classic way to enter the casino empty-handed.
+</Callout>
+
+## The shelf
+
+Fifteen names show up consistently. A May 2026 capture also mentioned a Screwdriver at 3 tickets with no readable effect. It is left off this table until someone confirms it still exists. Time Machine and Camera prices disagree between wiki.gg (6 tickets, plus 3 per floor) and early shop tables (Camera at 6, Time Machine’s shelf price missing, sometimes described as a Mystery Box find). Both rows say so.
+
+<ItemBrowser />
+
+## What to buy on a normal day
+
+With a handful of tickets, Golden Chip is the clean single purchase if someone is willing to pair it with a Taser later. The pair is the [combo page](/item-combos), and the order is the whole trick.
+
+Holy Statue is the defensive buy when the crew can stand together and bet fast games for a few seconds. It is a bad buy if everyone wanders.
+
+Skip Mystery Box until you have a plan. No developer has published odds. Community percentage lists are estimates. They are not reprinted here.
+
+Skip cosmetics on a save you are trying to finish. Hats are account unlocks in community reports; the tickets are not. Spend run tickets on the next day’s item.
+
+## Body parts are not an item combo
+
+The store says you can sell a body part for tickets. The Quota Gun is the item that turns a part into quota progress, and only as an emergency while you are under the line. Shooting the person who is holding the Taser is how you solve today’s quota and delete tomorrow’s plan. Mouth and eye shots also have non-quota costs: guides mention blocked speech and a darkened eye. Those side effects are Unverified detail, and they are a reason to aim carefully anyway.

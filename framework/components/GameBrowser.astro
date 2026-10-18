@@ -1,0 +1,91 @@
+---
+import { loadData } from '../lib/content';
+import Confidence from './Confidence.astro';
+
+type Game = {
+  id: string;
+  name: string;
+  summary: string;
+  floors: string;
+  risk: string;
+  reload: string;
+  achievements: string;
+  confidence: 'verified' | 'provisional' | 'disputed';
+};
+const games = loadData<Game[]>('games');
+---
+<div data-games>
+  <div class="filters">
+    <input type="search" data-q placeholder="Search tables" aria-label="Search games" />
+    <select data-risk aria-label="Risk">
+      <option value="">Any risk</option>
+      <option value="lower">Lower</option>
+      <option value="medium">Medium</option>
+      <option value="higher">Higher</option>
+      <option value="unverified">Unverified</option>
+    </select>
+    <select data-reload aria-label="Reload behavior">
+      <option value="">Any reload behavior</option>
+      <option value="replays">Replays on reload</option>
+      <option value="physics">Physics / does not replay</option>
+      <option value="unverified">Unverified</option>
+    </select>
+  </div>
+  <p class="count" data-count></p>
+  <div class="sheet-head game-grid">
+    <div>Table</div>
+    <div>Floors</div>
+    <div>Risk</div>
+    <div>Reload</div>
+  </div>
+  {games.map((game) => (
+    <article
+      class="sheet-row game-grid"
+      id={game.id}
+      data-row
+      data-name={`${game.name} ${game.summary} ${game.achievements}`.toLowerCase()}
+      data-risk={game.risk}
+      data-reload={game.reload}
+    >
+      <div>
+        <h3>{game.name}</h3>
+        <p class="meta-line">{game.summary} <Confidence level={game.confidence} /></p>
+        {game.achievements && <p class="tiny">Achievements: {game.achievements}</p>}
+      </div>
+      <div><span class="cell-label">Floors</span>{game.floors}</div>
+      <div><span class="cell-label">Risk</span>{game.risk}</div>
+      <div><span class="cell-label">Reload</span>{game.reload}</div>
+    </article>
+  ))}
+</div>
+<script>
+  const root = document.querySelector('[data-games]');
+  if (root) {
+    const q = root.querySelector('[data-q]') as HTMLInputElement;
+    const risk = root.querySelector('[data-risk]') as HTMLSelectElement;
+    const reload = root.querySelector('[data-reload]') as HTMLSelectElement;
+    const count = root.querySelector('[data-count]');
+    const rows = [...root.querySelectorAll('[data-row]')] as HTMLElement[];
+    const apply = () => {
+      const query = q.value.trim().toLowerCase();
+      let shown = 0;
+      rows.forEach((row) => {
+        const ok =
+          (!query || (row.dataset.name || '').includes(query)) &&
+          (!risk.value || row.dataset.risk === risk.value) &&
+          (!reload.value || row.dataset.reload === reload.value);
+        row.hidden = !ok;
+        if (ok) shown += 1;
+      });
+      if (count) count.textContent = `${shown} of ${rows.length} rows. Risk is a reading of community guides, not an official rating.`;
+    };
+    [q, risk, reload].forEach((el) => el.addEventListener('input', apply));
+    apply();
+  }
+</script>
+<style>
+  .game-grid { grid-template-columns: 1.7fr 0.7fr 0.45fr 0.7fr; }
+  @media (max-width: 760px) {
+    .game-grid.sheet-row { display: block; }
+  }
+</style>

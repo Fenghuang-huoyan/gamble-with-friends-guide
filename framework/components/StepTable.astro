@@ -1,0 +1,24 @@
+---
+interface Props {
+  caption: string;
+  columns: string[];
+  rows: string[][];
+}
+const { caption, columns, rows } = Astro.props;
+---
+<figure class="sheet">
+  <figcaption>{caption}</figcaption>
+  <div class="sheet-head" style={`grid-template-columns: repeat(${columns.length}, minmax(0, 1fr));`}>
+    {columns.map((column) => <div>{column}</div>)}
+  </div>
+  {rows.map((row) => (
+    <div class="sheet-row" style={`grid-template-columns: repeat(${columns.length}, minmax(0, 1fr));`}>
+      {row.map((cell, index) => (
+        <div>
+          <span class="cell-label">{columns[index]}</span>
+          {cell}
+        </div>
+      ))}
+    </div>
+  ))}
+</figure>

@@ -1,0 +1,123 @@
+---
+import { loadData } from '../lib/content';
+import { siteConfig } from '@site/site.config';
+import Confidence from './Confidence.astro';
+
+type Achievement = {
+  id: string;
+  name: string;
+  summary: string;
+  floor: number | null;
+  group: string;
+  needsChallenge: boolean;
+  deliberateLoss: boolean;
+  steamPercent: number | null;
+  confidence: 'verified' | 'provisional' | 'disputed';
+};
+const rows = loadData<Achievement[]>('achievements');
+const storageKey = `${siteConfig.steamAppId}:achievements`;
+---
+<div class="browser" data-achievements data-key={storageKey}>
+  <div class="filters">
+    <input type="search" data-q placeholder="Search achievement or game" aria-label="Search achievements" />
+    <select data-floor aria-label="Floor">
+      <option value="">All floors</option>
+      <option value="1">Floor 1</option>
+      <option value="2">Floor 2</option>
+      <option value="3">Floor 3</option>
+      <option value="4">Floor 4</option>
+      <option value="none">Not a floor achievement</option>
+    </select>
+    <label class="checkline"><input type="checkbox" data-challenge /> Phone Booth only</label>
+    <label class="checkline"><input type="checkbox" data-loss /> Deliberate losses</label>
+  </div>
+  <p class="count" data-count></p>
+  <div class="sheet-head ach-grid">
+    <div></div>
+    <div>Achievement</div>
+    <div>Floor</div>
+    <div>Steam %</div>
+  </div>
+  {rows.map((row) => (
+    <article
+      class="sheet-row ach-grid"
+      id={row.id}
+      data-row
+      data-name={`${row.name} ${row.summary}`.toLowerCase()}
+      data-floor={row.floor ?? 'none'}
+      data-challenge={row.needsChallenge ? 'yes' : 'no'}
+      data-loss={row.deliberateLoss ? 'yes' : 'no'}
+    >
+      <label class="check">
+        <input type="checkbox" data-id={row.id} />
+        <span class="sr-only">Mark {row.name} done on this browser</span>
+      </label>
+      <div>
+        <h3>{row.name}</h3>
+        <p class="meta-line">
+          {row.summary} <Confidence level={row.confidence} />
+        </p>
+        <p class="tiny">
+          {row.needsChallenge ? 'Accept the matching Phone Booth challenge first.' : 'Not tied to a floor challenge.'}
+          {row.deliberateLoss ? ' This one asks you to lose on purpose, after quota is safe.' : ''}
+        </p>
+      </div>
+      <div>
+        <span class="cell-label">Floor</span>
+        {row.floor ? `Floor ${row.floor}` : row.group}
+      </div>
+      <div>
+        <span class="cell-label">Steam %</span>
+        {row.steamPercent === null ? '—' : `${row.steamPercent}%`}
+      </div>
+    </article>
+  ))}
+</div>
+<script>
+  const root = document.querySelector('[data-achievements]');
+  if (root) {
+    const key = root.getAttribute('data-key') || 'achievements';
+    const saved = new Set(JSON.parse(localStorage.getItem(key) || '[]'));
+    const q = root.querySelector('[data-q]') as HTMLInputElement;
+    const floor = root.querySelector('[data-floor]') as HTMLSelectElement;
+    const challenge = root.querySelector('[data-challenge]') as HTMLInputElement;
+    const loss = root.querySelector('[data-loss]') as HTMLInputElement;
+    const count = root.querySelector('[data-count]');
+    const articles = [...root.querySelectorAll('[data-row]')] as HTMLElement[];
+    articles.forEach((article) => {
+      const box = article.querySelector('input[data-id]') as HTMLInputElement | null;
+      if (!box) return;
+      box.checked = saved.has(box.dataset.id || '');
+      box.addEventListener('change', () => {
+        const next = new Set(JSON.parse(localStorage.getItem(key) || '[]'));
+        const id = box.dataset.id || '';
+        if (box.checked) next.add(id);
+        else next.delete(id);
+        localStorage.setItem(key, JSON.stringify([...next]));
+      });
+    });
+    const apply = () => {
+      const query = q.value.trim().toLowerCase();
+      let shown = 0;
+      articles.forEach((article) => {
+        const ok =
+          (!query || (article.dataset.name || '').includes(query)) &&
+          (!floor.value || article.dataset.floor === floor.value) &&
+          (!challenge.checked || article.dataset.challenge === 'yes') &&
+          (!loss.checked || article.dataset.loss === 'yes');
+        article.hidden = !ok;
+        if (ok) shown += 1;
+      });
+      if (count) count.textContent = `${shown} of ${articles.length} shown. Steam percents are global unlocks on 18 Oct 2026. Requirement text is Unverified community wording.`;
+    };
+    [q, floor, challenge, loss].forEach((el) => el.addEventListener('input', apply));
+    apply();
+  }
+</script>
+<style>
+  .ach-grid { grid-template-columns: 1.4rem 1.8fr 0.5fr 0.45fr; }
+  @media (max-width: 760px) {
+    .ach-grid { display: block; }
+    .ach-grid .check { margin-bottom: 0.35rem; }
+  }
+</style>

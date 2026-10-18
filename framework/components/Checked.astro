@@ -1,0 +1,11 @@
+---
+interface Props {
+  version: string;
+  note?: string;
+}
+const { version, note } = Astro.props;
+---
+<p class="checked">
+  <b>Checked against {version}</b>
+  {note && <span>{note}</span>}
+</p>

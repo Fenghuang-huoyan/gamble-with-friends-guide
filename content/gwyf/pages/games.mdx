@@ -1,0 +1,59 @@
+---
+title: "Gamble With Your Friends Games — All Tables, Risk, and Floors"
+description: "The casino tables in Gamble With Your Friends on one page: which floor they show up on, whether a reload repeats them, and which achievements they feed."
+h1: "Casino games"
+section: "Reference"
+order: 9
+verifiedAgainst: "Steam says 17 games. Sixteen names are cross-checked from guides and from achievement ids. The 17th name, Baccarat’s floor, and several reload behaviors are Unverified. Risk is a guide reading, not an official stat."
+quickAnswer:
+  - "The store says 17 games of chance. This page names 16 and leaves the last name blank rather than inventing it."
+  - "Tables are randomized each time you enter a floor. Learn a type of game, not a machine in a fixed corner."
+  - "Wheel of Fortune and the Money Wheel are different tables, on different floors."
+  - "Mine Sweeper, Dragon Tower, Duck Race, and card games are the reload-friendly ones in community notes. Plinko and the wheels are not."
+  - "There are no separate pages for all 17. Achievements that hang off a table are linked from the row."
+sources:
+  - label: "Steam store, “17 different games of chance”"
+    url: "https://store.steampowered.com/app/3892270/Gamble_With_Your_Friends/"
+  - label: "V1.0.30 notes (Crash and Baccarat payouts, poker duplicate-card fix)"
+    url: "https://steamcommunity.com/app/3892270/allnews/"
+  - label: "Steam 100% guide, including the Mine Sweeper reload example"
+    url: "https://steamcommunity.com/sharedfiles/filedetails/?id=3721901485"
+  - label: "Blueprinted tips: wheels vs Plinko, two different wheels"
+    url: "https://blueprintedgaming.com/docs/gamble-with-your-friends/tips-and-tricks"
+related:
+  - href: "/floors"
+    label: "Floor by floor"
+  - href: "/achievements"
+    label: "Which challenge to accept"
+  - href: "/save-scum"
+    label: "How to use a replay"
+---
+
+import GameBrowser from '../../../framework/components/GameBrowser.astro';
+import Callout from '../../../framework/components/Callout.astro';
+
+## One table, not seventeen articles
+
+You do not need a thin page per machine. You need to know whether the thing in front of you can wipe the shared bank, whether a reload will teach you anything, and which Phone Booth challenge it can satisfy. Filter the list. Risk words (lower, medium, higher) are this site’s reading of how fast a shared bank dies in community write-ups. They are not drop rates and they are not official.
+
+<GameBrowser />
+
+<Callout tone="note" title="The missing name">
+  Counting the named rows without the placeholder gives 16. Steam’s feature list says 17. Baccarat is real — V1.0.30 changed its payouts — and it is already in the 16. Whatever the seventeenth is called, it is Unverified, so the last row stays empty.
+</Callout>
+
+## How to read a floor
+
+Floor 1 is the small set: Roulette, Blackjack, Slots, Street Craps, Duck Race, Wheel of Fortune. Floor 2 is where Crash, Plinko, Penguin Cross, Keno, HiLo, and the Money Wheel show up in guides. Floor 3 adds 1P Poker, Dragon Tower, and Mine Sweeper. Floor 4 is described as harder versions of tables you have met, not as a secret new game.
+
+The store says each visit randomizes the games. A guide’s “debut” list is the pool, not a guarantee that every machine is placed today. If the challenge wants Plinko and Plinko did not spawn, reroll the day rather than forcing a different table and blaming the achievement.
+
+## Reload, in one paragraph
+
+The Steam 100% guide shows Mine Sweeper bombs repeating after a quit. Card hands are described the same way. Duck Race winners and Dragon Tower paths are the other community memory tricks. Plinko is a physics board, and a tips page checked against V1.0.30 says the wheels do not replay either. For everything marked unverified in the Reload column, do not bet the bank on a pattern you have not tested yourself. The method, including how a shop action moves a stuck result, is on the [save scum page](/save-scum).
+
+## A quota day versus an achievement day
+
+On a quota day, pick the lower-variance thing that is actually in the room and stop when the timer-watcher says the debt for today is covered. On an achievement day, accept the booth challenge first, then look for that one table. Mixing both in the same five minutes is how Lucky Streak eats the quota.
+
+Blackjack’s “stand on 16” style advice in general guides is ordinary card sense, not a measured house edge for this game. This page does not invent payout tables the developer did not publish. V1.0.30 did say Crash and Baccarat payouts were tweaked, so any launch-week payout chart is stale even where it was accurate.

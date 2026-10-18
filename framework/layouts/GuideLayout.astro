@@ -1,0 +1,79 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import QuickAnswer from '../components/QuickAnswer.astro';
+import Toc from '../components/Toc.astro';
+import AdSlot from '../components/AdSlot.astro';
+import { articleJsonLd } from '../lib/seo';
+
+interface Props {
+  title: string;
+  description: string;
+  h1: string;
+  section: string;
+  verifiedAgainst: string;
+  quickAnswer: string[];
+  sources: { label: string; url: string }[];
+  related: { href: string; label: string }[];
+  headings: { depth: number; slug: string; text: string }[];
+}
+const props = Astro.props;
+---
+<BaseLayout
+  title={props.title}
+  description={props.description}
+  jsonLd={articleJsonLd({
+    title: props.title,
+    description: props.description,
+    pathname: Astro.url.pathname,
+  })}
+>
+  <main id="content" class="shell layout">
+    <article class="guide">
+      <header class="page-head">
+        <p class="crumbs"><a href="/">Home</a> / {props.section}</p>
+        <p class="kicker">{props.section}</p>
+        <h1>{props.h1}</h1>
+        <p class="checked"><b>Sources checked</b> <span>{props.verifiedAgainst}</span></p>
+      </header>
+      <QuickAnswer sentences={props.quickAnswer} />
+      <AdSlot name="afterQuickAnswer" />
+      <div class="toc-mobile">
+        <Toc headings={props.headings} />
+      </div>
+      <slot />
+      <section class="sources">
+        <h2>Sources and last check</h2>
+        <p>{props.verifiedAgainst} Community write-ups are labeled Unverified where this site has not confirmed them in a current client or an official patch note.</p>
+        <ul>
+          {props.sources.map((source) => (
+            <li><a href={source.url}>{source.label}</a></li>
+          ))}
+        </ul>
+        {props.related.length > 0 && (
+          <>
+            <h2>Related</h2>
+            <ul class="related">
+              {props.related.map((link) => (
+                <li><a href={link.href}>{link.label}</a></li>
+              ))}
+            </ul>
+          </>
+        )}
+      </section>
+    </article>
+    <aside class="side">
+      <Toc headings={props.headings} />
+      <AdSlot name="sidebar" variant="sidebar" />
+    </aside>
+  </main>
+</BaseLayout>
+
+<style>
+  .toc-mobile { margin: 1rem 0; }
+  @media (max-width: 1039px) {
+    .side { display: none; }
+  }
+  @media (min-width: 1040px) {
+    .toc-mobile { display: none; }
+  }
+</style>

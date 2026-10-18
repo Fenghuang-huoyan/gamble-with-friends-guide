@@ -1,0 +1,37 @@
+---
+import { loadData } from '../lib/content';
+import StepTable from './StepTable.astro';
+import Confidence from './Confidence.astro';
+
+const data = loadData<{
+  endings: {
+    id: string;
+    name: string;
+    choice: string;
+    result: string;
+    steamPercent: number;
+    confidence: 'verified' | 'provisional' | 'disputed';
+  }[];
+  oneSave: { caption: string; columns: string[]; rows: string[][] };
+  failures: { caption: string; columns: string[]; rows: string[][] };
+}>('endings');
+---
+<div class="sheet">
+  <p class="caption">The three endings</p>
+  <div class="sheet-head" style="grid-template-columns: 1.2fr 1.3fr 0.8fr 0.4fr;">
+    <div>Achievement</div><div>Day 13 choice</div><div>Result</div><div>Steam %</div>
+  </div>
+  {data.endings.map((ending) => (
+    <div class="sheet-row" id={ending.id} style="grid-template-columns: 1.2fr 1.3fr 0.8fr 0.4fr;">
+      <div>
+        <strong>{ending.name}</strong>
+        <div><Confidence level={ending.confidence} /></div>
+      </div>
+      <div><span class="cell-label">Day 13 choice</span>{ending.choice}</div>
+      <div><span class="cell-label">Result</span>{ending.result}</div>
+      <div><span class="cell-label">Steam %</span>{ending.steamPercent}%</div>
+    </div>
+  ))}
+</div>
+<StepTable caption={data.oneSave.caption} columns={data.oneSave.columns} rows={data.oneSave.rows} />
+<StepTable caption={data.failures.caption} columns={data.failures.columns} rows={data.failures.rows} />

@@ -1,0 +1,98 @@
+---
+title: "Gamble With Your Friends Online Fix — Can’t Join or Invite"
+description: "A short path for Gamble With Your Friends invite failures, desync, and version mismatches. No third-party online-fix downloads."
+h1: "Online fix"
+section: "Fix & Setup"
+order: 12
+verifiedAgainst: "Lobby rules are from the developer FAQ (30 Apr 2026) and the V1.0.11 / V1.0.30 notes. The later steps are the usual Steam-lobby checks, plus a player report that Cloudflare WARP blocked joins."
+quickAnswer:
+  - "This page is not a download. Do not install a third-party “online fix,” cracked exe, or keygen. They are how a lobby gets worse."
+  - "The game is Steam friends only, up to six people. There is no matchmaking. The developer says to turn VPNs off and to let the best connection host."
+  - "Quit the game on every PC, restart Steam, let the update finish, then have the host make a new lobby and send a new invite."
+  - "V1.0.11 set new lobbies to Friends Only by default. If strangers still walk in, set Lobby Mode to Invite Only and re-host."
+  - "If a clean vanilla lobby still fails, email support@tenstack.se with the Player log, not a screenshot of an IP address."
+sources:
+  - label: "Developer FAQ and troubleshooting"
+    url: "https://steamcommunity.com/app/3892270/discussions/0/845130462379808369/"
+  - label: "V1.0.11 and V1.0.30 notes"
+    url: "https://steamcommunity.com/app/3892270/allnews/"
+  - label: "Steam store platforms and co-op tags"
+    url: "https://store.steampowered.com/app/3892270/Gamble_With_Your_Friends/"
+related:
+  - href: "/platforms"
+    label: "Windows only"
+  - href: "/beginner-guide"
+    label: "First session"
+  - href: "/faq"
+    label: "FAQ"
+---
+
+import Callout from '../../../framework/components/Callout.astro';
+import StepTable from '../../../framework/components/StepTable.astro';
+import Checked from '../../../framework/components/Checked.astro';
+
+<Callout tone="danger" title="Do not download an online fix">
+  Search results for this problem are full of unofficial executables. This site will not link them. Gamble With Your Friends already has Steam lobbies. A replacement exe breaks updates, and it is the wrong file to run on a friends-only game.
+</Callout>
+
+## What the developers already said
+
+<Checked version="V1.0.11" note="Friends Only as the default is the 10 May 2026 patch. VPN guidance is the pinned FAQ." />
+
+The pinned FAQ, from the studio, is short:
+
+- Windows PCs only, for now.
+- No matchmaking. Steam friends only. Their Discord is [discord.gg/8GZwxBqhxN](https://discord.gg/8GZwxBqhxN) if you need people to play with.
+- Solo is allowed and not recommended.
+- Lobby Mode is Friends Only or Invite Only. It is not a public browser. Change it next to your profile on the main menu, or in Settings, General, Lobby Mode. Re-host after you change it. V1.0.11 corrected the default for new lobbies to Friends Only; the studio called the old default an oversight.
+- Connection problems: do not use a VPN or other software that rewrites the connection. They use the Steam API for lobbies. The friend with the best connection and PC should host.
+
+A June 2026 player thread matches the VPN line in practice: joins started working when Cloudflare WARP was turned off. That is one report, not a study. It is still the first network thing to try.
+
+## The short path
+
+<StepTable
+  caption="Join failures, in the order that wastes the least time"
+  columns={["Step", "Everyone does this", "You can stop if"]}
+  rows={[
+    ["1", "Fully exit the game. Do not leave it sitting on the menu.", "You were already fully quit and the problem is new."],
+    ["2", "Quit Steam as well, reopen it, and wait until the download queue is idle.", "Both clients show the same recent update and the game launches."],
+    ["3", "Compare versions out loud. A leftover build looks like a broken invite.", "The host and the guest name the same build."],
+    ["4", "Host creates one new lobby. Sends one new Steam invite. Old chat invites get ignored.", "The guest loads into the neighborhood and stays there."],
+    ["5", "Both accounts are Steam friends, both appear online, both launched the game from Steam. Overlay is allowed for this title.", "The invite is clickable and lands in this lobby, not an older one."],
+    ["6", "Turn VPNs, WARP, and proxy clients off for the test. Allow Steam and the game through the firewall. Do not disable the firewall forever.", "A clean network path joins."],
+    ["7", "If you use mods, move them out and verify the game files. Test two players, vanilla.", "Vanilla works. Then the mod list is the suspect, and both sides need the same versions."],
+    ["8", "Still failing: grab the log and write to support, with the build, who hosted, and the exact moment it died.", "You have a reply, or a known issue on the Steam discussions."],
+  ]}
+/>
+
+V1.0.30 also mentions network-code improvements. If one person never installed that update, you are debugging a version mismatch and calling it lag.
+
+## Where the log actually is
+
+The FAQ says: Windows key + R, type `appdata`, then go to `LocalLow\TENSTACK\Gamble With Your Friends` and send the file named Player. That shortcut opens the Roaming folder. LocalLow is its sibling. The reliable path is:
+
+`%USERPROFILE%\AppData\LocalLow\TENSTACK\Gamble With Your Friends`
+
+The log is the latest session. Grab it right after the failure. Send it to support@tenstack.se. Do not post account tokens or a private IP in a public thread.
+
+There is also Pause Menu, Report A Bug, inside the game.
+
+## Symptoms, mapped
+
+<StepTable
+  caption="What the failure usually means"
+  columns={["What you see", "Likely cause", "Next check"]}
+  rows={[
+    ["Invite does nothing", "Old notification, overlay disabled, or Steam thinks you are offline.", "New lobby, new invite, overlay on, both friends."],
+    ["Guest loads, then drops to the menu", "VPN, or a version/mod mismatch. A 2026 thread matched this with WARP left on.", "VPN off, both clients updated, vanilla retest."],
+    ["Version mismatch", "One PC did not finish the Steam update, or a mod replaced files.", "Idle download queue, then verify files."],
+    ["Strangers join", "Lobby Mode is looser than you think, or you did not re-host.", "Invite Only on every account in the session, then a new lobby. Streamers: the FAQ suggests a profile name you do not show on stream."],
+    ["Fine in the neighborhood, broken after a day change", "State desync. The 1.0.30 notes mention network fixes, which does not make mixed versions safe.", "Vanilla lobby. If vanilla is clean, add mods back one at a time."],
+    ["Cannot find a public server", "There isn’t one.", "Friends only. Discord if you need a crew."],
+  ]}
+/>
+
+## What this page will not do
+
+It will not link mod loaders, achievement unlockers, or “fix” archives. If the official path fails, the next step is the studio, with a log. Platforms that are not Windows are a different question, answered on the [platforms page](/platforms) without the poker-app detour other sites took.

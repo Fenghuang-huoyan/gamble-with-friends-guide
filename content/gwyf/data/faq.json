@@ -1,0 +1,107 @@
+[
+  {
+    "id": "what-is-it",
+    "featured": true,
+    "more": "/beginner-guide",
+    "q": "What is Gamble With Your Friends?",
+    "a": "A 1–6 player online co-op game on Steam where the crew shares one bank account and has five minutes a day to hit a loan shark’s quota. TEAM GWYF developed it, TENSTACK published it, and it released on 1 May 2026. It is not real-money gambling."
+  },
+  {
+    "id": "wrong-name",
+    "featured": true,
+    "more": "/",
+    "q": "Is it called Gamble With Friends?",
+    "a": "No. The Steam title is Gamble With Your Friends, AppID 3892270. “Gamble With Friends” is a common search miss. This wiki covers that game only."
+  },
+  {
+    "id": "price",
+    "featured": true,
+    "more": "/faq",
+    "q": "How much does Gamble With Your Friends cost?",
+    "a": "The US Steam store API on 18 Oct 2026 listed $7.99, on sale at $4.95 (−38%). Sales end. Check the store page for today’s price."
+  },
+  {
+    "id": "solo",
+    "featured": true,
+    "more": "/beginner-guide",
+    "q": "Can you play Gamble With Your Friends solo?",
+    "a": "Yes. The store page and the developer FAQ both say solo is possible and not recommended. There is no matchmaking. Multiplayer is Steam friends only, up to six people in a lobby."
+  },
+  {
+    "id": "endless",
+    "featured": true,
+    "more": "/endings",
+    "q": "Does Endless Mode block achievements?",
+    "a": "V1.0.30’s patch notes say Endless Mode stops you seeing the ending and blocks the achievements tied to the different endings. It is a per-save toggle on an empty slot, and it locks once the save is created. Floor achievements are a separate question; the notes do not say Endless blocks those."
+  },
+  {
+    "id": "ps5",
+    "featured": false,
+    "more": "/platforms",
+    "q": "Is Gamble With Your Friends on PS5, Xbox, or Switch?",
+    "a": "No. The Steam store lists Windows only, and the developer FAQ says they are only supporting Windows PCs for now. It is not a social poker app, and it is not cross-platform with a console casino."
+  },
+  {
+    "id": "deck",
+    "featured": false,
+    "more": "/platforms",
+    "q": "Does it run on Steam Deck?",
+    "a": "Unverified. There is no Mac or Linux build on the store page, and no Proton rating is cited here. Treat Deck as unsupported until you test it."
+  },
+  {
+    "id": "players",
+    "featured": false,
+    "more": "/online-fix",
+    "q": "How many players, and how do I join a friend?",
+    "a": "1–6, friends only. The host creates a lobby and sends a fresh Steam invite. If someone cannot join, turn VPNs off and read the online fix page. Do not download a third-party “online fix.”"
+  },
+  {
+    "id": "achievements-stuck",
+    "featured": false,
+    "more": "/achievements",
+    "q": "Why didn’t my achievement unlock?",
+    "a": "For anything tied to a floor, you almost certainly skipped the Phone Booth challenge or accepted a different one. That is the first check. A current list of still-bugged achievements was not verified for V1.0.30, so this site does not name one."
+  },
+  {
+    "id": "endings-count",
+    "featured": false,
+    "more": "/endings",
+    "q": "How many endings are there?",
+    "a": "Three, all on day 13: pay the debt, win Double or Nothing, or lose Double or Nothing. The launch coin-flip achievements are not endings. You can take all three ending achievements from one late save if you quit the moment each one pops."
+  },
+  {
+    "id": "real-money",
+    "featured": false,
+    "more": "/faq",
+    "q": "Can I win real money?",
+    "a": "No. You buy the game on Steam. The cash, tickets, and debt are fictional. The publisher’s store text says they do not condone gambling."
+  },
+  {
+    "id": "peak",
+    "featured": false,
+    "more": "/faq",
+    "q": "What is the peak player count?",
+    "a": "Not listed here. Third-party charts disagree, and a peak was not taken from Steam for this page. The developer did announce 1,000,000+ copies in the first week and 2,000,000+ copies in the first month."
+  },
+  {
+    "id": "timer",
+    "featured": false,
+    "more": "/beginner-guide",
+    "q": "Can I turn off the 5-minute timer?",
+    "a": "Yes, before the save exists. V1.0.30 added a cogwheel on an empty slot for timer on/off, timer length, difficulty, starting money, starting tickets, and Endless Mode. Those choices lock when the slot is created."
+  },
+  {
+    "id": "discord",
+    "featured": false,
+    "more": "/online-fix",
+    "q": "Where is the official Discord?",
+    "a": "The developer FAQ links https://discord.gg/8GZwxBqhxN . Bug reports can also go to support@tenstack.se with the Player log from %USERPROFILE%\\AppData\\LocalLow\\TENSTACK\\Gamble With Your Friends."
+  },
+  {
+    "id": "mods",
+    "featured": false,
+    "more": "/online-fix",
+    "q": "Do I need mods?",
+    "a": "No. Test a vanilla lobby before you add anything. This site does not host mods, trainers, or unofficial online-fix downloads."
+  }
+]

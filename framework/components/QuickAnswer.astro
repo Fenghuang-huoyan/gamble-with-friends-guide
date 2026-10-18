@@ -1,0 +1,10 @@
+---
+interface Props {
+  sentences: readonly string[];
+}
+const { sentences } = Astro.props;
+---
+<section class="quick" aria-label="Quick answer">
+  <span class="stamp">Quick answer</span>
+  {sentences.map((sentence) => <p>{sentence}</p>)}
+</section>

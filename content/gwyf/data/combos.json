@@ -1,0 +1,77 @@
+{
+  "taser": {
+    "caption": "Taser, then Golden Chip",
+    "columns": [
+      "Step",
+      "Who",
+      "Action",
+      "Stop"
+    ],
+    "rows": [
+      [
+        "1",
+        "Caller",
+        "Name the table before anyone pulls an item out. Roulette, Blackjack, Street Craps, and the wheels are the ones where a higher cap matters.",
+        "If the crew is still walking, nobody activates anything."
+      ],
+      [
+        "2",
+        "Taser holder",
+        "Stand at that keypad. Hold the Taser on it. A full contact is described as about 10 seconds and a 5x max bet. Letting go early leaves charge for a second machine.",
+        "Zapping a keypad you are not going to bet is a wasted raise."
+      ],
+      [
+        "3",
+        "Chip holder",
+        "Use the Golden Chip on that same machine. It bets the current maximum and does not take money for the bet.",
+        "Using the chip first locks the free all-in to the old, smaller cap."
+      ],
+      [
+        "4",
+        "Timer",
+        "When the result lands, stop. One planned swing is the combo.",
+        "A second all-in “because we’re hot” is how the free money goes back."
+      ]
+    ]
+  },
+  "mistakes": {
+    "caption": "Why the item “did nothing”",
+    "columns": [
+      "Symptom",
+      "Usual cause",
+      "Fix"
+    ],
+    "rows": [
+      [
+        "Time Machine gave the money back and then took a win",
+        "It reverses the whole last 60 seconds, not just your personal loss.",
+        "Call the net of that minute first. Fire it only on a team loss. It will not arm in the lobby."
+      ],
+      [
+        "Camera balance hit zero",
+        "The lens was on when someone lost, or it was pointed at a machine instead of a head.",
+        "Keep it off. Film the other player’s head at the win, then smash the camera to cash out. It cannot film you."
+      ],
+      [
+        "Holy Statue did not shield anyone",
+        "People were spread out, or they kept betting after the window.",
+        "Group at the table, activate, bet the fast games, stop when it ends."
+      ],
+      [
+        "Taser + chip paid a small free bet",
+        "Chip was used before the Taser finished, or on a different keypad.",
+        "Taser first, same keypad, then chip."
+      ],
+      [
+        "Bought item, no effect",
+        "It was paid for and never picked up, or it was used on the wrong target.",
+        "E to pick it up in the shop. Keypad items touch a keypad. Aura items need the holder standing with the crew."
+      ],
+      [
+        "Stake Holder felt useless",
+        "No other item was in play, or you expected it to buff the Time Machine.",
+        "It amplifies other items. It does not buff the Time Machine."
+      ]
+    ]
+  }
+}

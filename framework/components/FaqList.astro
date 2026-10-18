@@ -1,0 +1,28 @@
+---
+import { loadData } from '../lib/content';
+import { faqJsonLd } from '../lib/seo';
+
+interface Props {
+  featuredOnly?: boolean;
+}
+const { featuredOnly = false } = Astro.props;
+const all = loadData<{ id: string; q: string; a: string; more?: string; featured?: boolean }[]>('faq');
+const items = featuredOnly ? all.filter((item) => item.featured) : all;
+---
+<div class={featuredOnly ? 'home-faq' : 'faq-list'}>
+  {featuredOnly
+    ? items.map((item) => (
+        <details>
+          <summary>{item.q}</summary>
+          <p>{item.a} {item.more && <a href={item.more}>Read the page.</a>}</p>
+        </details>
+      ))
+    : items.map((item) => (
+        <section class="faq-item" id={item.id}>
+          <h2>{item.q}</h2>
+          <p>{item.a}</p>
+          {item.more && <p><a href={item.more}>Read the full page.</a></p>}
+        </section>
+      ))}
+</div>
+{!featuredOnly && <script type="application/ld+json" set:html={JSON.stringify(faqJsonLd(items.map((item) => ({ q: item.q, a: item.a }))))} />}

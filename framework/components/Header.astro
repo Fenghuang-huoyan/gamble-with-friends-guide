@@ -1,0 +1,45 @@
+---
+import { siteConfig } from '@site/site.config';
+
+const path = Astro.url.pathname.replace(/\/$/, '') || '/';
+const current = (href: string) => (path === href ? 'page' : undefined);
+---
+<header class="site-header">
+  <div class="shell">
+    <div class="header-row">
+      <a class="brand" href="/">
+        <span class="ticket-mark" aria-hidden="true"></span>
+        <span class="brand-name">
+          <strong>{siteConfig.gameTitle}</strong>
+          <span>wiki</span>
+        </span>
+      </a>
+      <nav class="desk-nav" aria-label="Primary">
+        {siteConfig.nav.map((item) => (
+          <a href={item.href} aria-current={current(item.href)}>{item.label}</a>
+        ))}
+        <details class="more">
+          <summary>More</summary>
+          <div class="more-panel">
+            {siteConfig.moreNav.map((item) => (
+              <a href={item.href} aria-current={current(item.href)}>{item.label}</a>
+            ))}
+          </div>
+        </details>
+      </nav>
+      <details class="menu-toggle">
+        <summary>Menu</summary>
+        <nav class="mob-panel" aria-label="Mobile">
+          <p class="mob-label">Primary</p>
+          {siteConfig.nav.map((item) => (
+            <a href={item.href} aria-current={current(item.href)}>{item.label}</a>
+          ))}
+          <p class="mob-label">More</p>
+          {siteConfig.moreNav.map((item) => (
+            <a href={item.href} aria-current={current(item.href)}>{item.label}</a>
+          ))}
+        </nav>
+      </details>
+    </div>
+  </div>
+</header>
