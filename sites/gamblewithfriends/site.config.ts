@@ -16,7 +16,7 @@ export const siteConfig = {
   homeDescription:
     'Fan wiki for Gamble With Your Friends (Steam AppID 3892270). Phone Booth achievement checklist, three endings on one save, and the item rules that make a ticket spend actually do something.',
   analytics: {
-    gaId: '',
+    gaId: 'G-GH4080BMKG',
   },
   ads: {
     network: 'adsterra' as const,
