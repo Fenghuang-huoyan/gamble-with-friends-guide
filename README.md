@@ -31,9 +31,9 @@ This repo is a static Astro build. No adapter, no server, no database.
 5. Do not set a root directory unless you moved the project.
 6. After the first successful deployment, add the domain `gamblewithfriends.wiki` in the Vercel project (Settings → Domains). Vercel will show the exact DNS records it wants.
 
-Leave analytics and ads off until the domain is actually serving. `sites/gamblewithfriends/site.config.ts` has an empty `analytics.gaId`. `sites/gamblewithfriends/ads.config.ts` ships `ADSTERRA_*` placeholders and `enabled: false`, so no ad script is injected.
+Analytics stay off until the domain is serving and `sites/gamblewithfriends/site.config.ts` has an `analytics.gaId`. Ads are on for one placement: `afterQuickAnswer` loads the Native Banner zone from `sites/gamblewithfriends/ads.config.ts` on the home page and every guide. Every other slot is still an `ADSTERRA_*` placeholder and renders nothing.
 
-This game is a casino crawler. The monetization path in the plan is **Adsterra**, not AdSense. When you create your own zones, replace one placeholder id, set `enabled: true`, and check `/online-fix` so the slot is a labeled advertisement and never looks like a download. Give a brand-new domain a day or two before the first live zone.
+This game is a casino crawler. The monetization path is **Adsterra**, not AdSense. When you add another zone, replace that slot’s placeholder id only — do not reuse the Native Banner key on a second slot that can appear on the same page. Check `/online-fix` so the slot stays a labeled advertisement and never looks like a download.
 
 ## DNS
 
@@ -89,4 +89,4 @@ Pages are the homepage plus thirteen guides:
 
 ## Ads and privacy
 
-`framework/components/AdSlot.astro` renders nothing while a slot id starts with `ADSTERRA_` or `enabled` is false. There is no accounts system. Achievement checkboxes use `localStorage` only, keyed by the Steam AppID.
+`framework/components/AdSlot.astro` renders nothing while a slot id starts with `ADSTERRA_` or `enabled` is false. A live slot loads `invoke.js` from that slot’s host (Native Banner uses the profitableratecpmnetwork host in the config) into `container-${zone}`. There is no accounts system. Achievement checkboxes use `localStorage` only, keyed by the Steam AppID.

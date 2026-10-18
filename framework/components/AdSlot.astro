@@ -1,26 +1,20 @@
 ---
-import { adsConfig } from '@site/ads.config';
+import { adsConfig, resolveAdPlacement } from '@site/ads.config';
 
 interface Props {
   name: keyof typeof adsConfig.slots;
   variant?: 'inline' | 'sidebar' | 'footer';
 }
 const { name, variant = 'inline' } = Astro.props;
-const slot = adsConfig.slots[name];
-const placeholder = !adsConfig.enabled || !slot || slot.id.startsWith('ADSTERRA_');
+const placement = resolveAdPlacement(name);
 ---
-{placeholder ? null : (
+{placement.active ? (
   <aside class:list={['ad-slot', variant === 'sidebar' && 'ad-sidebar']} aria-label="Advertisement" data-slot={name}>
     <p class="tiny">Advertisement</p>
-    <div id={`ad-${slot.id}`}></div>
-    <script is:inline define:vars={{ zone: slot.id }}>
-      var script = document.createElement('script');
-      script.async = true;
-      script.src = 'https://www.highperformanceformat.com/' + zone + '/invoke.js';
-      document.currentScript.parentElement.appendChild(script);
-    </script>
+    <script is:inline async="async" data-cfasync="false" src={placement.scriptSrc}></script>
+    <div id={placement.containerId}></div>
   </aside>
-)}
+) : null}
 <style>
   .ad-slot { margin: 1rem 0; min-height: 0; }
   .ad-sidebar { display: none; }
