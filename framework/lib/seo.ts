@@ -12,6 +12,7 @@ export function websiteJsonLd() {
     name: siteConfig.siteName,
     url: siteConfig.url,
     description: siteConfig.homeDescription,
+    image: new URL(siteConfig.art.ogImage, siteConfig.url).href,
     inLanguage: 'en',
   };
 }

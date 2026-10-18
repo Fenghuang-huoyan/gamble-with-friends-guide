@@ -31,30 +31,51 @@ const meta = loadData<{
 
 const faq = loadData<{ q: string; a: string; featured?: boolean }[]>('faq');
 const pages = (await getCollection('pages')).sort((a, b) => a.data.order - b.data.order);
+/** Official Steam store screenshots, self-hosted. See public/images/official/steam/ATTRIBUTION.txt. */
+const shot = (n: number) => `/images/official/steam/ss-${String(n).padStart(2, '0')}.jpg`;
+const guideArt: Record<string, string> = {
+  'beginner-guide': shot(0),
+  'quota-strategy': shot(4),
+  faq: shot(15),
+  achievements: shot(9),
+  endings: shot(10),
+  'save-scum': shot(5),
+  items: shot(6),
+  'item-combos': shot(8),
+  games: shot(3),
+  floors: shot(7),
+  accessories: shot(11),
+  'online-fix': shot(1),
+  platforms: shot(14),
+};
 const problems = [
   {
     href: '/beginner-guide',
     num: '01',
     title: 'First day',
     text: 'Shared bank, five minutes, and the moment you are supposed to stop betting.',
+    image: guideArt['beginner-guide'],
   },
   {
     href: '/achievements',
     num: '02',
     title: 'It didn’t unlock',
     text: 'You did the feat. Steam stayed quiet. Start at the Phone Booth, not a bug list.',
+    image: guideArt.achievements,
   },
   {
     href: '/endings',
     num: '03',
     title: 'All three endings',
     text: 'One late save, the payoff first, and the exact moment to press Esc.',
+    image: guideArt.endings,
   },
   {
     href: '/online-fix',
     num: '04',
     title: 'Can’t join',
     text: 'Invites, VPNs, and version mismatches. No third-party “online fix” download.',
+    image: guideArt['online-fix'],
   },
 ];
 ---
@@ -73,8 +94,18 @@ const problems = [
         <span>Not real-money gambling</span>
         <span>{meta.latestNamedUpdate} · {meta.latestNamedUpdateDate}</span>
       </p>
-      <section class="hero">
-        <div class="hero-grid">
+      <section class="hero-stage">
+        <img
+          class="hero-art"
+          src={siteConfig.art.hero}
+          alt={siteConfig.art.heroAlt}
+          width="1920"
+          height="620"
+          fetchpriority="high"
+          decoding="async"
+        />
+        <div class="hero-scrim" aria-hidden="true"></div>
+        <div class="hero-stage-layout">
           <div>
             <p class="kicker">{siteConfig.developer} · {siteConfig.publisher}</p>
             <h1>Gamble With Your Friends Wiki</h1>
@@ -83,29 +114,51 @@ const problems = [
               and the three places a run quietly fails — the Phone Booth, the day-13 coin, and an item that never armed.
             </p>
             <div class="cta-row">
-              <a class="btn" href={siteConfig.steamUrl}>View on Steam</a>
+              <a class="btn" href="/beginner-guide">Beginner guide</a>
+              <a class="btn ghost" href={siteConfig.steamUrl}>View on Steam</a>
               <a class="btn ghost" href={siteConfig.discordUrl}>Official Discord</a>
               <VersionBadge />
             </div>
             <p class="version-note">{siteConfig.version.detail} Page checked 18 Oct 2026.</p>
           </div>
-          <aside class="shift-card">
-            <header>
-              <strong>Shift card</strong>
-              <span>From the store page</span>
-            </header>
-            <dl>
-              <div><dt>Crew</dt><dd>{meta.players}</dd></div>
-              <div><dt>Quota window</dt><dd>{meta.quotaMinutes} minutes</dd></div>
-              <div><dt>Floors</dt><dd>{meta.floors}</dd></div>
-              <div><dt>Endings</dt><dd>{meta.endings}</dd></div>
-              <div><dt>Achievements</dt><dd>{meta.achievements}</dd></div>
-              <div><dt>Games of chance</dt><dd>{meta.gamesClaimed}</dd></div>
-              <div><dt>A clear run</dt><dd>{meta.playtime}</dd></div>
-            </dl>
-          </aside>
         </div>
       </section>
+      <p class="art-credit">Key art and screenshots are the official Steam store assets for App {siteConfig.steamAppId}.</p>
+
+      <section class="section doors">
+        <h2>Where are you stuck?</h2>
+        <p class="section-intro">Four doors. The rest of the wiki hangs off these, instead of a directory of three hundred URLs.</p>
+        <div class="problem-grid">
+          {problems.map((problem) => (
+            <a class="problem" href={problem.href}>
+              <span class="card-art">
+                <img src={problem.image} alt="" width="600" height="338" decoding="async" />
+                <span class="num">{problem.num}</span>
+              </span>
+              <span class="card-copy">
+                <h3>{problem.title}</h3>
+                <p>{problem.text}</p>
+              </span>
+            </a>
+          ))}
+        </div>
+      </section>
+
+      <aside class="shift-card wide">
+        <header>
+          <strong>Shift card</strong>
+          <span>From the store page</span>
+        </header>
+        <dl>
+          <div><dt>Crew</dt><dd>{meta.players}</dd></div>
+          <div><dt>Quota window</dt><dd>{meta.quotaMinutes} minutes</dd></div>
+          <div><dt>Floors</dt><dd>{meta.floors}</dd></div>
+          <div><dt>Endings</dt><dd>{meta.endings}</dd></div>
+          <div><dt>Achievements</dt><dd>{meta.achievements}</dd></div>
+          <div><dt>Games of chance</dt><dd>{meta.gamesClaimed}</dd></div>
+          <div><dt>A clear run</dt><dd>{meta.playtime}</dd></div>
+        </dl>
+      </aside>
 
       <section class="section">
         <QuickAnswer
@@ -118,20 +171,6 @@ const problems = [
         />
       </section>
       <AdSlot name="afterQuickAnswer" />
-
-      <section class="section">
-        <h2>Where are you stuck?</h2>
-        <p class="section-intro">Four doors. The rest of the wiki hangs off these, instead of a directory of three hundred URLs.</p>
-        <div class="problem-grid">
-          {problems.map((problem) => (
-            <a class="problem" href={problem.href}>
-              <span class="num">{problem.num}</span>
-              <h3>{problem.title}</h3>
-              <p>{problem.text}</p>
-            </a>
-          ))}
-        </div>
-      </section>
 
       <section class="stats" aria-label="Game figures from Steam">
         <div><strong>{meta.gamesClaimed}</strong><span>games on the store page</span></div>
@@ -148,9 +187,16 @@ const problems = [
         <div class="card-grid">
           {pages.map((page) => (
             <a class="guide-card" href={`/${page.id}`}>
-              <span class="section-tag">{page.data.section}</span>
-              <h3>{page.data.h1}</h3>
-              <p>{page.data.description}</p>
+              {guideArt[page.id] && (
+                <span class="card-art">
+                  <img src={guideArt[page.id]} alt="" width="600" height="338" loading="lazy" decoding="async" />
+                </span>
+              )}
+              <span class="card-copy">
+                <span class="section-tag">{page.data.section}</span>
+                <h3>{page.data.h1}</h3>
+                <p>{page.data.description}</p>
+              </span>
             </a>
           ))}
         </div>

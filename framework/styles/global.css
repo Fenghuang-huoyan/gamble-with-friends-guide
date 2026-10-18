@@ -202,13 +202,60 @@ button, input, select { font: inherit; color: inherit; }
   padding: 0.45rem 0;
 }
 
-.hero { padding: 2.2rem 0 0.5rem; }
-.hero-grid {
-  display: grid;
-  gap: 1.25rem;
+.hero-stage {
+  position: relative;
+  margin: 1rem 0 0;
+  min-height: 24rem;
+  border-radius: 22px;
+  overflow: hidden;
+  background: #0c0b09;
+  box-shadow: var(--shadow);
+  isolation: isolate;
+}
+.hero-art {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 42%;
+  z-index: 0;
+}
+.hero-scrim {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(180deg, rgba(8, 7, 6, 0.12) 0%, rgba(8, 7, 6, 0.02) 38%, rgba(8, 7, 6, 0.55) 68%, rgba(8, 7, 6, 0.9) 100%);
+  pointer-events: none;
+}
+.hero-stage-layout {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-height: 24rem;
+  max-width: 44rem;
+  padding: 1.15rem 1.1rem 1.2rem;
 }
 @media (min-width: 900px) {
-  .hero-grid { grid-template-columns: 1.4fr 0.8fr; align-items: end; }
+  .hero-stage { min-height: 26rem; border-radius: 26px; }
+  .hero-stage-layout { min-height: 26rem; padding: 1.5rem 1.5rem 1.4rem; }
+}
+.hero-stage h1 {
+  font-size: clamp(2.35rem, 4.8vw, 3.85rem);
+  text-shadow: 0 2px 22px rgba(0, 0, 0, 0.55);
+}
+.hero-stage .lede { text-shadow: 0 1px 12px rgba(0, 0, 0, 0.45); }
+.hero-stage .btn.ghost {
+  border-color: rgba(243, 238, 228, 0.45);
+  background: rgba(12, 11, 9, 0.35);
+}
+.hero-stage .version-note { color: var(--cream-dim); }
+.art-credit {
+  margin: 0.4rem 0 0;
+  color: var(--muted);
+  font-size: 0.75rem;
 }
 .kicker {
   margin: 0 0 0.6rem;
@@ -269,6 +316,10 @@ h1 {
 .shift-card div { display: flex; justify-content: space-between; gap: 1rem; padding: 0.28rem 0; border-bottom: 1px solid rgba(27, 23, 18, 0.08); }
 .shift-card dt { color: #6e6254; }
 .shift-card dd { margin: 0; font-weight: 650; text-align: right; }
+.shift-card.wide { margin: 1rem 0 0.2rem; }
+@media (min-width: 800px) {
+  .shift-card.wide dl { grid-template-columns: repeat(4, minmax(0, 1fr)); column-gap: 1.4rem; }
+}
 
 .stamp {
   display: inline-block;
@@ -295,25 +346,62 @@ h1 {
 }
 .section-intro { margin: -0.2rem 0 0.9rem; color: var(--cream-dim); max-width: var(--measure); }
 
+.doors { margin-top: 1.35rem; }
 .problem-grid, .card-grid {
   display: grid;
   gap: 0.75rem;
 }
-@media (min-width: 800px) {
-  .problem-grid { grid-template-columns: 1fr 1fr; }
-  .card-grid { grid-template-columns: 1fr 1fr; }
+@media (min-width: 720px) {
+  .problem-grid, .card-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (min-width: 1100px) {
+  .problem-grid { grid-template-columns: repeat(4, 1fr); }
+  .card-grid { grid-template-columns: 1fr 1fr 1fr; }
 }
 .problem, .guide-card {
-  display: block;
+  display: flex;
+  flex-direction: column;
   text-decoration: none;
   background: var(--panel);
   border: 1px solid var(--line);
   border-radius: 16px;
-  padding: 1rem 1rem 0.9rem;
+  padding: 0;
   min-height: 100%;
+  overflow: hidden;
 }
-.problem:hover, .guide-card:hover { border-color: #6a5c46; background: var(--panel-2); }
-.problem .num, .guide-card .section-tag {
+.problem:hover, .guide-card:hover { border-color: #8a734c; background: var(--panel-2); }
+.card-art {
+  position: relative;
+  display: block;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: #1a1612;
+}
+.card-art img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.35s ease;
+}
+.problem:hover .card-art img, .guide-card:hover .card-art img { transform: scale(1.045); }
+.card-copy { display: block; padding: 0.8rem 0.9rem 0.95rem; }
+.problem .num {
+  position: absolute;
+  left: 0.6rem;
+  top: 0.6rem;
+  width: 1.85rem;
+  height: 1.85rem;
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  background: var(--ticket);
+  color: var(--ink);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+.guide-card .section-tag {
   color: var(--ticket);
   font-size: 0.75rem;
   letter-spacing: 0.12em;
@@ -323,9 +411,10 @@ h1 {
 .problem h3, .guide-card h3 {
   font-family: var(--serif);
   font-weight: 400;
-  font-size: 1.55rem;
-  margin: 0.25rem 0;
+  font-size: 1.45rem;
+  margin: 0.2rem 0;
   letter-spacing: -0.02em;
+  line-height: 1.05;
 }
 .problem p, .guide-card p { margin: 0; color: var(--cream-dim); }
 
@@ -579,4 +668,6 @@ h1 {
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .btn:hover { transform: none; }
+  .card-art img { transition: none; }
+  .problem:hover .card-art img, .guide-card:hover .card-art img { transform: none; }
 }
