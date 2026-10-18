@@ -1,0 +1,60 @@
+Official Steam store assets for Gamble With Your Friends (AppID 3892270).
+Self-hosted so the wiki does not hotlink the Steam CDN. Not affiliated with TEAM GWYF or TENSTACK.
+Store page: https://store.steampowered.com/app/3892270/Gamble_With_Your_Friends/
+Downloaded 18 Oct 2026 from shared.akamai.steamstatic.com store_item_assets.
+
+library-hero.jpg
+  Steam library hero, 1920x620
+  https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3892270/0e63162db84cc4816e44cc02852b867a6b8ea35c/library_hero.jpg
+
+ss-00.jpg
+  Official store screenshot thumbnail, 600x338
+  https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3892270/46a2a2c1593b57eb3b8948a68be504e8d91d3912/ss_46a2a2c1593b57eb3b8948a68be504e8d91d3912.600x338.jpg
+
+ss-01.jpg
+  Official store screenshot thumbnail, 600x338
+  https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3892270/e3514d1723232a988324d08834e8784e6ad355c2/ss_e3514d1723232a988324d08834e8784e6ad355c2.600x338.jpg
+
+ss-03.jpg
+  Official store screenshot thumbnail, 600x338
+  https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3892270/cfb1d0bb25fe2af094eec6b5fb32726c684e423e/ss_cfb1d0bb25fe2af094eec6b5fb32726c684e423e.600x338.jpg
+
+ss-04.jpg
+  Official store screenshot thumbnail, 600x338
+  https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3892270/a4c4607121c84eef4914a3a0cdf2a564dff8947d/ss_a4c4607121c84eef4914a3a0cdf2a564dff8947d.600x338.jpg
+
+ss-05.jpg
+  Official store screenshot thumbnail, 600x338
+  https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3892270/f4c7252db93bdf6df240a7eeeb13476c00d393cd/ss_f4c7252db93bdf6df240a7eeeb13476c00d393cd.600x338.jpg
+
+ss-06.jpg
+  Official store screenshot thumbnail, 600x338
+  https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3892270/9dbd90ccfc8b5922356dfb83d9c32dd033632c33/ss_9dbd90ccfc8b5922356dfb83d9c32dd033632c33.600x338.jpg
+
+ss-07.jpg
+  Official store screenshot thumbnail, 600x338
+  https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3892270/c26843af07ec2117ffa713aa33cdaec6e15b8447/ss_c26843af07ec2117ffa713aa33cdaec6e15b8447.600x338.jpg
+
+ss-08.jpg
+  Official store screenshot thumbnail, 600x338
+  https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3892270/a4011076809f5cc7b9abacf1d1e377bc549c26fa/ss_a4011076809f5cc7b9abacf1d1e377bc549c26fa.600x338.jpg
+
+ss-09.jpg
+  Official store screenshot thumbnail, 600x338
+  https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3892270/695a2dfbeb15622dd917aaded8b57d195f3fa147/ss_695a2dfbeb15622dd917aaded8b57d195f3fa147.600x338.jpg
+
+ss-10.jpg
+  Official store screenshot thumbnail, 600x338
+  https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3892270/9a6b05a5fe5b3b0dd8d70bf9dfa3d9a737d5c65e/ss_9a6b05a5fe5b3b0dd8d70bf9dfa3d9a737d5c65e.600x338.jpg
+
+ss-11.jpg
+  Official store screenshot thumbnail, 600x338
+  https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3892270/6ff1d56ade68faa9870518d3535075ad1a0d6361/ss_6ff1d56ade68faa9870518d3535075ad1a0d6361.600x338.jpg
+
+ss-14.jpg
+  Official store screenshot thumbnail, 600x338
+  https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3892270/06a5822ae2dc9681ce4354d914a204caa6285baa/ss_06a5822ae2dc9681ce4354d914a204caa6285baa.600x338.jpg
+
+ss-15.jpg
+  Official store screenshot thumbnail, 600x338
+  https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3892270/dedab75fef178a6fb4b1aeaad3db57deb8e67776/ss_dedab75fef178a6fb4b1aeaad3db57deb8e67776.600x338.jpg

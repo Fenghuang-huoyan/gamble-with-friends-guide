@@ -18,6 +18,12 @@ export const siteConfig = {
   analytics: {
     gaId: 'G-GH4080BMKG',
   },
+  art: {
+    hero: '/images/official/steam/library-hero.jpg',
+    heroAlt:
+      'Official Steam library art for Gamble With Your Friends: four players around a casino table under the game logo',
+    ogImage: '/images/official/steam/library-hero.jpg',
+  },
   ads: {
     network: 'adsterra' as const,
   },
